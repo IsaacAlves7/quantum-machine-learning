@@ -37,6 +37,7 @@ For more contents, access the address: https://stackshare.io/container-tools
 <img src="https://cdn.icon-icons.com/icons2/3053/PNG/512/docker_macos_bigsur_icon_190231.png" align="right" height="177">
 
 - Load Balancing
+- Fast CGI
 - Clustering
 - Reverse proxy
 - Mesh services

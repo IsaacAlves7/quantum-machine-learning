@@ -60,3 +60,6 @@ For more contents, access the address: https://stackshare.io/container-tools
 <p align="center">
     <a href="https://hub.docker.com/r/isaacalves7/node-file"><img src="https://user-images.githubusercontent.com/61624336/170062106-70768c8d-b49a-4a55-b686-d9b52856fb69.jpg" height="177"/></a>
 </p>
+
+![docker_web_application](https://user-images.githubusercontent.com/61624336/230755169-d19bdc51-0bb6-49cf-8934-a2625e758f50.png)
+

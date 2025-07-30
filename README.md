@@ -8,7 +8,7 @@
 Para ver os repositórios da imagem desses contêineres, acesse: https://hub.docker.com/u/isaacalves7
 
 # 🏗️ Environments
-<img src="https://user-images.githubusercontent.com/61624336/170058420-5027e551-de2d-438b-ae88-842d75e8a78b.svg" align="right" height="177">
+<img src="https://user-images.githubusercontent.com/61624336/170058420-5027e551-de2d-438b-ae88-842d75e8a78b.svg" align="right" height="77">
 
 - Development (Desenvolvimento)
 - Test (Teste)
@@ -17,7 +17,7 @@ Para ver os repositórios da imagem desses contêineres, acesse: https://hub.doc
 - Deploy (Implantação)
 
 # 🎼 Orchestration tools
-<img src="https://www.docker.com/wp-content/uploads/2015/08/docker-toolbox1.png" align="right" height="177">
+<img src="https://github.com/user-attachments/assets/70c1a291-a0dc-4a1b-9c12-4c83706d7785" align="right" height="277">
 
 For more contents, access the address: https://stackshare.io/container-tools
 
@@ -60,6 +60,3 @@ For more contents, access the address: https://stackshare.io/container-tools
 <p align="center">
     <a href="https://hub.docker.com/r/isaacalves7/node-file"><img src="https://user-images.githubusercontent.com/61624336/170062106-70768c8d-b49a-4a55-b686-d9b52856fb69.jpg" height="177"/></a>
 </p>
-
-![docker_web_application](https://user-images.githubusercontent.com/61624336/230755169-d19bdc51-0bb6-49cf-8934-a2625e758f50.png)
-

@@ -124,6 +124,11 @@ Isso também reforça aquela ideia que você trouxe antes: não é um caos desor
 
 Mesmo sendo um algoritmo conceitual, o Deutsch–Jozsa abriu caminho para outros algoritmos mais práticos, como os de Peter Shor e Lov Grover, porque ele mostrou, de forma clara, que a computação quântica não é apenas uma melhoria incremental, mas uma mudança de paradigma na forma como problemas podem ser resolvidos.
 
+Implementação em Qiskit > Desenvolvimento prático de algoritmos usando Qiskit:
+
+```python
+```
+
 **Algoritmo de Grover**: O algoritmo de Grover é um dos exemplos mais claros de como a computação quântica consegue vantagem real sobre a computação clássica sem precisar de hipóteses absurdas ou problemas extremamente artificiais. Ele resolve o problema de busca em um conjunto não ordenado, que no mundo clássico exige, no pior caso, verificar elemento por elemento até encontrar o que você quer. Se você tem ( $N$ ) itens, o tempo cresce linearmente, porque não existe atalho lógico quando não há estrutura. Já o algoritmo proposto por Lov Grover reduz esse custo para aproximadamente ( $\sqrt{N}$ ), o que pode parecer uma melhoria modesta, mas em escalas grandes é gigantesco, porque muda completamente a natureza do crescimento do problema.
 
 A lógica dele é profundamente diferente de uma busca tradicional. Em vez de percorrer elementos, o algoritmo começa colocando todos os possíveis estados em superposição, o que significa que, de certa forma, todas as opções estão “presentes” ao mesmo tempo no sistema. Mas isso, por si só, não resolve nada — é só um estado inicial. O passo seguinte é aplicar um oráculo, que é uma função especial que reconhece a solução e altera a fase do estado correspondente, basicamente “marcando” a resposta correta, mas sem revelá-la diretamente. Esse detalhe é essencial: o algoritmo não pega o resultado de forma explícita, ele só altera propriedades internas do sistema.
@@ -140,14 +145,11 @@ No fim, o algoritmo de Grover é um exemplo perfeito de como a computação quâ
 
 Implementação em Qiskit > Desenvolvimento prático de algoritmos usando Qiskit:
 
+```python
+```
 
 
-
-
-Módulo 4: Machine Learning
-
-Clássico e Quântico (3 horas)
-Objetivo: Explicar os fundamentos de aprendizado de máquina e sua relação com a computação quântica.
+Machine Learning Clássico e Quântico - fundamentos de aprendizado de máquina e sua relação com a computação quântica.
 
 Conteúdo:
 

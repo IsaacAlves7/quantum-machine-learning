@@ -44,8 +44,8 @@ A principal diferença entre *computadores clássicos e quânticos* está na for
 
 <table>
 	<tr>
-		<td><img src="https://github.com/user-attachments/assets/0d74c424-8cbc-4bf9-90e2-6bd07c562270"></td>
-		<td><img src="https://github.com/user-attachments/assets/5bc520a7-a5f8-4255-bda7-b8cf3471ea13"></td>
+		<td><img src="https://github.com/user-attachments/assets/0d74c424-8cbc-4bf9-90e2-6bd07c562270" height="477"></td>
+		<td><img src="https://github.com/user-attachments/assets/5bc520a7-a5f8-4255-bda7-b8cf3471ea13" height="477"></td>
 	</tr>
 </table>
 

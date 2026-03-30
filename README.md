@@ -409,8 +409,7 @@ O impacto potencial da ASI é imenso, com o potencial de revolucionar vários as
 
 <img src="https://github.com/user-attachments/assets/a41bff35-da60-4662-bc0e-32dac5c48361" height="177" align="right" />
 
-
-# 1. Guided Project on Programming a Quantum Computer With Qiskit-IBM SDK
+1. Guided Project on Programming a Quantum Computer With Qiskit-IBM SDK
 
 |Task|Content (Click To View)|
 |----|------|
@@ -420,7 +419,7 @@ O impacto potencial da ASI é imenso, com o potencial de revolucionar vários as
 |Task 4|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/tree/main/Guided%20Project%20-%20Programming%20a%20Quantum%20Computer%20with%20Qiskit%20-%20IBM%20SDK/Task%204">Multiple Qubits, Entanglement</a>|
 |Task 5|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/tree/main/Guided%20Project%20-%20Programming%20a%20Quantum%20Computer%20with%20Qiskit%20-%20IBM%20SDK/Task%205">Bernstein-Vazirani Algorithm</a>|
 
-# 2. CERN Practical Introduction To Quantum Computing
+2. CERN Practical Introduction To Quantum Computing
 
 |Lecture|Link To View|
 |-----|-----|
@@ -432,7 +431,7 @@ O impacto potencial da ASI é imenso, com o potencial de revolucionar vários as
 |Lecture 6|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/tree/main/CERN%20-%20Practical%20Introduction%20To%20Quantum%20Computing/Lecture%206%20Resources">Lecture 6[Code + Theory]</a>|
 |Lecture 7|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/tree/main/CERN%20-%20Practical%20Introduction%20To%20Quantum%20Computing/Lecture%207%20Resources">Lecture 7[Code + Theory]</a>|
 
-# 3. Cheatsheets
+3. Cheatsheets
 
 |No.|Topic (Click To View)|
 |--|-----|
@@ -450,7 +449,7 @@ O impacto potencial da ASI é imenso, com o potencial de revolucionar vários as
 |10.|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/blob/main/Topic-Wise%20Cheatsheets/Python%20%2B%20Useful%20Libraries%20Cheatsheets/assets/Numpy.jpg">NumPy Cheatsheet</a>|
 |11.|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/blob/main/Topic-Wise%20Cheatsheets/Python%20%2B%20Useful%20Libraries%20Cheatsheets/assets/Matplotlib.jpg">Matplotlib Cheatsheet</a>|
 
-# 4. QWorld's Global Quantum Programming Workshop | QBronze
+4. QWorld's Global Quantum Programming Workshop | QBronze
 
 |Content|Link To View|
 |-----|-----|
@@ -464,7 +463,7 @@ O impacto potencial da ASI é imenso, com o potencial de revolucionar vários as
 |Day 4|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/tree/main/QWorld's%20Global%20Quantum%20Programming%20Workshop/DAY%204">Workshop DAY 4</a>|
 |Day 5|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/tree/main/QWorld's%20Global%20Quantum%20Programming%20Workshop/DAY%205%20%2B%20DAY%206">Workshop DAY 5</a>|
 
-# 5. Microsoft Azure Quantum Resources
+5. Microsoft Azure Quantum Resources
 
 |No.|Link To View|
 |-----|-----|
@@ -473,9 +472,8 @@ O impacto potencial da ASI é imenso, com o potencial de revolucionar vários as
 |2.|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/tree/main/Microsoft%20Azure%20Quantum%20Resources/QSharp%20(Q%23)%20And%20Azure%20Quantum%20Quick-Start">QSharp (Q#) And Azure Quantum Quick-Start [Code+Theory]</a>|
 |3.|<a href="https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/tree/main/Microsoft%20Azure%20Quantum%20Resources/Microsoft%20Q%23%20Coding%20Contests">Microsoft Q# Coding Contest Solutions</a>|
 
-# 6. Quantum Machine Learning
+6. Quantum Machine Learning
 
 |Content|Link To View|
 |---|---|
 |-|To Be Added Soon|
-

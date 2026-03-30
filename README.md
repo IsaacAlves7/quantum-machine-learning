@@ -2,7 +2,8 @@
 
 > Versículo chave: "Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos." - Provérbios 16:3
 
-# Quantum-Computing-Collection-Of-Resources
+**Quantum-Computing-Collection-Of-Resources**
+
 ![Quantum Header](https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/blob/main/assets/Quantum%20Header.png)
 	
 > About: Hello 👋 And Welcome To This Amazing And Well Maintained Repository On Quantum Computing Resources [Code+Theory] Updated Regularly During My Time At IBM, Qubit x Qubit And The Coding School's Introduction To Quantum Computing Course 21'

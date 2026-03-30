@@ -1,4 +1,4 @@
-<img width="1103" height="556" alt="September 2022 Quantum Blog Feature Image-1" src="https://github.com/user-attachments/assets/19453cc1-91bf-409c-a9e4-44515e9c11c3" />
+<a href="https://github.com/IsaacAlves7/quantum-machine-learning/"><img width="1103" height="556" alt="September 2022 Quantum Blog Feature Image-1" src="https://github.com/user-attachments/assets/19453cc1-91bf-409c-a9e4-44515e9c11c3" /></a>
 
 > Versículo chave: "Consagre ao Senhor tudo o que você faz, e os seus planos serão bem-sucedidos." - Provérbios 16:3
 

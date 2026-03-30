@@ -49,8 +49,17 @@ No cerne da computação quântica estão os **qubits e as portas lógicas quân
 ```math
 |\psi\rangle = \alpha|0\rangle + \beta|1\rangle
 ```
+<br />
 
-onde ( \alpha ) e ( \beta ) são números complexos que satisfazem ( $|\alpha|^2 + |\beta|^2 = 1$ ), correspondendo às probabilidades de o qubit estar em cada estado quando medido. Para manipular esses estados, utilizam-se **portas quânticas**, que são operações unitárias representadas por matrizes 2×2 (ou maiores, no caso de sistemas compostos). Algumas das portas mais importantes são: a **Porta X**, análoga ao NOT clássico, que inverte o estado do qubit; a **Porta Y** e **Z**, que aplicam rotações quânticas nos eixos correspondentes da esfera de Bloch; a **Porta Hadamard (H)**, que cria superposição, colocando o qubit em um estado de 50% de probabilidade entre 0 e 1; e a **Porta CNOT (Controlled-NOT)**, que realiza uma operação condicional entre dois qubits, sendo essencial para gerar emaranhamento.
+Onde ( $\alpha$ ) e ( $\beta$ ) são números complexos que satisfazem ( $|\alpha|^2 + |\beta|^2 = 1$ ), correspondendo às probabilidades de o qubit estar em cada estado quando medido. Para manipular esses estados, utilizam-se **portas quânticas**, que são operações unitárias representadas por matrizes 2×2 (ou maiores, no caso de sistemas compostos). Algumas das portas mais importantes são: 
+
+- a **Porta X**, análoga ao NOT clássico, que inverte o estado do qubit;
+
+- a **Porta Y** e **Z**, que aplicam rotações quânticas nos eixos correspondentes da esfera de Bloch; 
+
+- a **Porta Hadamard (H)**, que cria superposição, colocando o qubit em um estado de 50% de probabilidade entre 0 e 1; 
+
+- e a **Porta CNOT (Controlled-NOT)**, que realiza uma operação condicional entre dois qubits, sendo essencial para gerar emaranhamento.
 
 A **superposição** é o que fornece o paralelismo exponencial; o **emaranhamento** cria a interdependência que dá ao sistema sua coerência coletiva; e a **interferência** atua como o mecanismo de filtragem que elimina as soluções incorretas. Em conjunto, esses fenômenos formam o alicerce dos **algoritmos quânticos**, como o de **Shor** (para fatoração de números primos), o de **Grover** (para busca em banco de dados não ordenado), e as **variações híbridas de aprendizado de máquina quântico**, onde uma rede neural clássica é combinada a camadas quânticas parametrizadas (as chamadas *Quantum Circuits Layers*).
 

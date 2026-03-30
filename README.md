@@ -117,7 +117,17 @@ Finalmente, a diferença entre **paradigmas de modelagem e execução** se resum
 
 Construindo Circuitos Quânticos: Implementação de portas quânticas básicas:
 
-Medições em qubits:
+Medições em qubits: Em computação quântica, **medições em qubits** são um conceito central e fundamentalmente diferente da observação de bits clássicos. Enquanto bits clássicos têm valores determinísticos (0 ou 1), qubits podem existir em **superposição**, ou seja, em uma combinação linear de |0⟩ e |1⟩ com amplitudes complexas. Quando medimos um qubit, essa superposição “colapsa” probabilisticamente em um estado clássico definido, e essa é a essência da medição quântica.
+
+Cada qubit é descrito por um estado |ψ⟩ = α|0⟩ + β|1⟩, onde α e β são números complexos que satisfazem |α|² + |β|² = 1. Ao medir o qubit na **base computacional** (a base padrão {|0⟩, |1⟩}), a probabilidade de observar 0 é |α|² e de observar 1 é |β|². Importante: após a medição, o qubit deixa de estar em superposição e passa a ser definitivamente o estado que foi observado. Isso significa que a medição **é destrutiva** para a informação quântica que existia antes do colapso.
+
+Para sistemas com múltiplos qubits, a medição também pode envolver **entrelaçamento quântico (entanglement)**. Quando qubits estão entrelaçados, medir um deles instantaneamente influencia o estado do outro, mesmo que estejam separados fisicamente. Isso é usado em algoritmos quânticos e QML para correlacionar variáveis de forma que não tem equivalente clássico direto.
+
+Outro ponto crítico é que medições **não precisam ser feitas imediatamente** após cada porta quântica. Na prática, muitos algoritmos QML usam **medições no final do circuito**: você prepara os qubits, aplica uma sequência de portas unitárias parametrizadas, e então mede todos ou alguns qubits repetidamente várias vezes (*shots*) para construir uma distribuição de probabilidades que alimenta o otimizador clássico. Esse processo híbrido é o que permite, por exemplo, estimar gradientes ou funções de custo em **Variational Quantum Circuits**.
+
+Além disso, existem medições em **outras bases** (não apenas {|0⟩, |1⟩}), aplicando-se primeiro transformações unitárias como Hadamard, Pauli-X/Y/Z, ou rotações específicas. Isso é fundamental para QML porque permite extrair características do espaço quântico de maneiras que correspondem a diferentes *features* do problema, como similaridade de vetores ou correlações complexas.
+
+Em resumo, medir qubits é **o ponto de conversão entre o mundo quântico e o clássico**: é onde a informação probabilística da superposição se torna uma saída mensurável, mas ao mesmo tempo destrói parte da informação original do estado quântico. Em QML, a forma, a base e o número de medições definem a qualidade e a precisão do aprendizado, tornando essa etapa tão estratégica quanto o design do próprio circuito quântico.
 
 Exercício Prático: Criação de um pequeno circuito quântico simulando um algoritmo simples.
 

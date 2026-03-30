@@ -72,7 +72,7 @@ Onde ( $\alpha$ ) e ( $\beta$ ) são números complexos que satisfazem ( $|\alph
 
 - e a **Porta CNOT (Controlled-NOT)**, que realiza uma operação condicional entre dois qubits, sendo essencial para gerar emaranhamento.
 
-A **superposição** é o que fornece o paralelismo exponencial; o **emaranhamento** cria a interdependência que dá ao sistema sua coerência coletiva; e a **interferência** atua como o mecanismo de filtragem que elimina as soluções incorretas. 
+> A **superposição** é o que fornece o paralelismo exponencial; o **emaranhamento** cria a interdependência que dá ao sistema sua coerência coletiva; e a **interferência** atua como o mecanismo de filtragem que elimina as soluções incorretas. 
 
 Em conjunto, esses fenômenos formam o alicerce dos *algoritmos quânticos*, como o de **Shor** (para fatoração de números primos), o de **Grover** (para busca em banco de dados não ordenado), e as *variações híbridas de aprendizado de máquina quântico*, onde uma rede neural clássica é combinada a camadas quânticas parametrizadas (as chamadas *Quantum Circuits Layers*).
 

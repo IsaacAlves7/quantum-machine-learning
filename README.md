@@ -77,7 +77,9 @@ Em síntese, o Quantum Machine Learning representa a fusão entre a capacidade a
 
 <div align="center"><img src="https://github.com/user-attachments/assets/57251cbd-6483-4720-8c65-91a22bfa713f"></div>
 
-Vamos escrever circuitos quânticos usando programação com Qiskit e Cirq:
+Vamos escrever circuitos quânticos usando programação com Qiskit e Cirq: Comparação entre Qiskit e Cirq: Quando você compara Qiskit e Cirq, você está basicamente comparando duas filosofias diferentes de como interagir com computadores quânticos, tanto no nível de construção de circuitos quanto no ecossistema ao redor, incluindo machine learning quântico. Não é só uma questão de “qual é melhor”, mas de qual abordagem faz mais sentido dependendo do tipo de problema, da infraestrutura e do nível de abstração que você quer trabalhar.
+
+O Qiskit nasce com uma visão mais completa e estruturada de ecossistema. Ele foi pensado não apenas como uma biblioteca para construir circuitos, mas como uma plataforma inteira que cobre desde a modelagem até a execução em hardware real da IBM. Isso faz com que ele seja mais “baterias inclusas”, com módulos bem definidos para diferentes áreas, como otimização, química quântica e principalmente machine learning quântico. Existe uma preocupação grande com padronização, abstração e integração com o mundo corporativo, o que encaixa bem com cenários mais próximos de produção ou pesquisa aplicada. Quando você entra no campo de QML (quantum machine learning), o Qiskit oferece ferramentas relativamente maduras, como o Qiskit Machine Learning, que permite construir modelos híbridos onde circuitos quânticos funcionam como camadas dentro de pipelines clássicos.
 
 <a href="https://quantumai.google/cirq"><img src="https://github.com/user-attachments/assets/bcc922da-4c9d-46f4-adae-ece0d2e8760f" align="right" height="77"></a>
 
@@ -90,14 +92,6 @@ Instalação e Configuração do Ambiente de Desenvolvimento:
 ```sh
 
 ```
-
-Construindo Circuitos Quânticos: Implementação de portas quânticas básicas:
-
-Medições em qubits:
-
-Comparação entre Qiskit e Cirq: Quando você compara Qiskit e Cirq, você está basicamente comparando duas filosofias diferentes de como interagir com computadores quânticos, tanto no nível de construção de circuitos quanto no ecossistema ao redor, incluindo machine learning quântico. Não é só uma questão de “qual é melhor”, mas de qual abordagem faz mais sentido dependendo do tipo de problema, da infraestrutura e do nível de abstração que você quer trabalhar.
-
-O Qiskit nasce com uma visão mais completa e estruturada de ecossistema. Ele foi pensado não apenas como uma biblioteca para construir circuitos, mas como uma plataforma inteira que cobre desde a modelagem até a execução em hardware real da IBM. Isso faz com que ele seja mais “baterias inclusas”, com módulos bem definidos para diferentes áreas, como otimização, química quântica e principalmente machine learning quântico. Existe uma preocupação grande com padronização, abstração e integração com o mundo corporativo, o que encaixa bem com cenários mais próximos de produção ou pesquisa aplicada. Quando você entra no campo de QML (quantum machine learning), o Qiskit oferece ferramentas relativamente maduras, como o Qiskit Machine Learning, que permite construir modelos híbridos onde circuitos quânticos funcionam como camadas dentro de pipelines clássicos.
 
 Já o Cirq segue uma linha diferente. Ele é mais “baixo nível” e mais próximo do hardware, refletindo a forma como o Google estrutura seus dispositivos quânticos. Em vez de abstrair demais, o Cirq te dá mais controle sobre como os circuitos são construídos, como os qubits são organizados e como as operações são aplicadas. Isso faz com que ele seja extremamente poderoso para quem quer entender profundamente o comportamento do sistema ou otimizar circuitos para arquiteturas específicas. Em compensação, ele exige mais do desenvolvedor, porque muitas coisas que no Qiskit já vêm prontas, no Cirq você precisa montar manualmente. No contexto de machine learning quântico, o Cirq não tem um módulo tão integrado quanto o Qiskit, mas ele se conecta muito bem com bibliotecas como TensorFlow Quantum, que é onde o Google realmente concentra sua estratégia de QML.
 
@@ -120,6 +114,10 @@ Por outro lado, o paradigma de **quantum annealing**, usado por máquinas como D
 Outro ponto crítico é o **paradigma híbrido** que domina a QML atual. Nele, modelos quânticos parametrizados são combinados com otimizadores clássicos: o circuito quântico processa os dados e produz resultados probabilísticos, enquanto um algoritmo clássico ajusta os parâmetros para minimizar uma função de perda. Esse modelo explora o que chamamos de *quantum advantage potencial* sem depender da execução de grandes circuitos quânticos de alta fidelidade. É diferente da computação clássica, em que todos os cálculos podem ser determinísticos; na QML, a saída é estocástica, e a modelagem deve incluir métodos de agregação de medições (*shots*) e tratamento de ruído.
 
 Finalmente, a diferença entre **paradigmas de modelagem e execução** se resume à abstração versus implementação: a modelagem quântica define *como os dados e problemas são representados no espaço quântico*, enquanto a execução determina *como esses modelos são materializados em hardware*, lidando com restrições físicas, ruído, paralelismo quântico e custo de medições. Em QML, essas escolhas afetam desempenho, escalabilidade e até mesmo a viabilidade prática de um algoritmo, tornando essencial o entendimento de ambos os paradigmas para projetar soluções eficientes.
+
+Construindo Circuitos Quânticos: Implementação de portas quânticas básicas:
+
+Medições em qubits:
 
 Exercício Prático: Criação de um pequeno circuito quântico simulando um algoritmo simples.
 

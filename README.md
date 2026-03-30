@@ -10,7 +10,7 @@
 Current and Projected Contents In This Repository:
 
 # ⚛️ QML - Quantum Machine Learning
-<a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=React&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-QuTiP-512BD4?style=flat&logo=electron&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=reacttable&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-Google_Cirq-512BD4?style=flat&logo=C&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=reactos&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-Qiskit-6929C4?style=flat&logo=qiskit&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=treyarch&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=temporal&logoColor=white"></a> 
+<a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=React&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-QuTiP-512BD4?style=flat&logo=electron&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=reacttable&logoColor=white"></a> <a href="https://quantumai.google/cirq"><img src="https://img.shields.io/badge/QML-Google_Cirq-512BD4?style=flat&logo=C&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=reactos&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-Qiskit-6929C4?style=flat&logo=qiskit&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=treyarch&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=temporal&logoColor=white"></a> 
 
 <img src="https://github.com/user-attachments/assets/1bbc1a8a-28f9-4827-bf2e-50fdd2f6adb2" align="right" height="77">
 
@@ -40,7 +40,7 @@ Embora ainda esteja em seus estágios iniciais, a computação quântica promete
 
 O **Quantum Machine Learning (QML)** é a intersecção entre o aprendizado de máquina e a computação quântica, uma nova fronteira da ciência computacional que busca aproveitar as propriedades da mecânica quântica para resolver problemas de processamento de dados com uma eficiência inatingível pelos computadores clássicos. Para compreender o QML em profundidade, é necessário entender como os computadores quânticos diferem dos tradicionais, os princípios que sustentam sua operação e como essas propriedades afetam o aprendizado e o raciocínio das máquinas.
 
-A principal **diferença entre computadores clássicos e quânticos** está na forma como eles armazenam e manipulam a informação. Enquanto os computadores clássicos trabalham com **bits**, que assumem apenas dois estados possíveis (0 ou 1), os computadores quânticos utilizam **qubits** (*quantum bits*), que podem existir simultaneamente em uma combinação de 0 e 1 devido à propriedade da **superposição**. Isso permite que um computador quântico realize cálculos paralelos em múltiplos estados ao mesmo tempo, em vez de seguir uma sequência linear de operações. Além disso, enquanto o processamento clássico se baseia em portas lógicas determinísticas, os computadores quânticos usam **portas quânticas unitárias**, que manipulam estados probabilísticos. Isso confere ao modelo quântico um poder de paralelismo exponencial — especialmente útil para problemas que crescem em complexidade combinatória, como otimizações, simulações moleculares e redes neurais de alta dimensionalidade.
+A principal diferença entre *computadores clássicos e quânticos* está na forma como eles armazenam e manipulam a informação. Enquanto os computadores clássicos trabalham com **bits**, que assumem apenas dois estados possíveis (0 ou 1), os computadores quânticos utilizam **qubits** (*quantum bits*), que podem existir simultaneamente em uma combinação de 0 e 1 devido à propriedade da **superposição**. Isso permite que um computador quântico realize cálculos paralelos em múltiplos estados ao mesmo tempo, em vez de seguir uma sequência linear de operações. Além disso, enquanto o processamento clássico se baseia em portas lógicas determinísticas, os computadores quânticos usam **portas quânticas unitárias**, que manipulam estados probabilísticos. Isso confere ao modelo quântico um poder de paralelismo exponencial — especialmente útil para problemas que crescem em complexidade combinatória, como otimizações, simulações moleculares e redes neurais de alta dimensionalidade.
 
 Os *princípios fundamentais* da computação quântica derivam diretamente da *mecânica quântica*, a teoria física que descreve o comportamento das partículas subatômicas. Entre esses princípios, três são os pilares centrais: *superposição*, *emaranhamento* e *interferência*. A superposição permite que um qubit represente vários estados simultaneamente, como se um bit clássico pudesse ser 0 e 1 ao mesmo tempo, descrito matematicamente como uma combinação linear de ambos os estados base. 
 
@@ -48,14 +48,14 @@ O **emaranhamento (entanglement)** é a correlação intrínseca entre dois ou m
 
 Já a **interferência** é o fenômeno que permite reforçar ou anular probabilidades de determinados estados, controlando os resultados possíveis de um cálculo quântico e permitindo que algoritmos “dirijam” a probabilidade de acerto para as respostas corretas.
 
-No cerne da computação quântica estão os *qubits e as portas lógicas quânticas*. O **qubit** é o análogo quântico do bit clássico, mas é representado como um vetor em um espaço vetorial bidimensional complexo — o chamado **espaço de Hilbert**. Um qubit pode ser descrito matematicamente pelo estado:
+No cerne da computação quântica estão os *qubits e as portas lógicas quânticas*. O *qubit* é o análogo quântico do bit clássico, mas é representado como um vetor em um espaço vetorial bidimensional complexo — o chamado **espaço de Hilbert**. Um qubit pode ser descrito matematicamente pelo estado:
 
 ```math
 |\psi\rangle = \alpha|0\rangle + \beta|1\rangle
 ```
 <br />
 
-Onde ( $\alpha$ ) e ( $\beta$ ) são números complexos que satisfazem ( $|\alpha|^2 + |\beta|^2 = 1$ ), correspondendo às probabilidades de o qubit estar em cada estado quando medido. Para manipular esses estados, utilizam-se **portas quânticas**, que são operações unitárias representadas por matrizes 2×2 (ou maiores, no caso de sistemas compostos). Algumas das portas mais importantes são: 
+Onde ( $\alpha$ ) e ( $\beta$ ) são números complexos que satisfazem ( $|\alpha|^2 + |\beta|^2 = 1$ ), correspondendo às probabilidades de o qubit estar em cada estado quando medido. Para manipular esses estados, utilizam-se **portas lógicas quânticas**, que são operações unitárias representadas por matrizes 2×2 (ou maiores, no caso de sistemas compostos). Algumas das portas mais importantes são: 
 
 - a **Porta X**, análoga ao NOT clássico, que inverte o estado do qubit;
 
@@ -65,14 +65,15 @@ Onde ( $\alpha$ ) e ( $\beta$ ) são números complexos que satisfazem ( $|\alph
 
 - e a **Porta CNOT (Controlled-NOT)**, que realiza uma operação condicional entre dois qubits, sendo essencial para gerar emaranhamento.
 
-A **superposição** é o que fornece o paralelismo exponencial; o **emaranhamento** cria a interdependência que dá ao sistema sua coerência coletiva; e a **interferência** atua como o mecanismo de filtragem que elimina as soluções incorretas. Em conjunto, esses fenômenos formam o alicerce dos **algoritmos quânticos**, como o de **Shor** (para fatoração de números primos), o de **Grover** (para busca em banco de dados não ordenado), e as **variações híbridas de aprendizado de máquina quântico**, onde uma rede neural clássica é combinada a camadas quânticas parametrizadas (as chamadas *Quantum Circuits Layers*).
+A **superposição** é o que fornece o paralelismo exponencial; o **emaranhamento** cria a interdependência que dá ao sistema sua coerência coletiva; e a **interferência** atua como o mecanismo de filtragem que elimina as soluções incorretas. 
+
+Em conjunto, esses fenômenos formam o alicerce dos *algoritmos quânticos*, como o de **Shor** (para fatoração de números primos), o de **Grover** (para busca em banco de dados não ordenado), e as *variações híbridas de aprendizado de máquina quântico*, onde uma rede neural clássica é combinada a camadas quânticas parametrizadas (as chamadas *Quantum Circuits Layers*).
 
 No contexto do **Quantum Machine Learning**, os algoritmos são desenhados para explorar esses fenômenos de forma a otimizar tarefas de aprendizado e previsão. Um modelo típico de QML pode receber dados codificados em estados quânticos, processá-los em circuitos quânticos parametrizados e aplicar técnicas de retropropagação híbrida, onde os gradientes são calculados parcialmente por operações quânticas e parcialmente por métodos clássicos. Isso resulta em um novo paradigma de aprendizagem: redes neurais quânticas (*Quantum Neural Networks*) que operam sobre amplitudes de probabilidade em vez de valores determinísticos.
 
 Quanto às **ferramentas e simuladores**, hoje existem várias plataformas que permitem experimentar com computação quântica sem necessidade de hardware especializado. O **Qiskit**, da IBM, é um dos frameworks mais populares e fornece tanto simuladores locais quanto acesso a computadores quânticos reais pela nuvem IBM Quantum Experience. O **Cirq**, desenvolvido pelo Google, é outro ambiente amplamente usado para simulações e execução de algoritmos quânticos no *Quantum AI Lab*. Há também o **PennyLane**, da Xanadu, projetado especificamente para integrar redes neurais clássicas e quânticas, permitindo a criação de modelos híbridos de aprendizado profundo. Outras ferramentas incluem o **Braket** (da AWS), **QuTiP** (para simulação de sistemas quânticos), e **Ocean SDK**, da D-Wave, voltado para computação quântica adiabática.
 
 Em síntese, o Quantum Machine Learning representa a fusão entre a capacidade analítica da inteligência artificial e o poder probabilístico da física quântica. Se os computadores clássicos imitam a lógica do raciocínio humano, os computadores quânticos simulam o próprio **tecido probabilístico da natureza**. E ao incorporar conceitos como superposição, emaranhamento e interferência aos algoritmos de aprendizado, o QML inaugura um novo paradigma: o de **máquinas que aprendem não apenas com dados, mas com as próprias leis fundamentais do universo**.
-
 
 <div align="center"><img src="https://github.com/user-attachments/assets/57251cbd-6483-4720-8c65-91a22bfa713f"></div>
 
@@ -96,15 +97,18 @@ Conteúdo:
 Módulo 3: Algoritmos Quânticos Básicos (2 horas)
 Objetivo: Familiarizar os alunos com algoritmos fundamentais de computação quântica.
 
-Conteúdo:
+Algoritmos Quânticos
 
-- Introdução a Algoritmos Quânticos;
 - Algoritmo de Deutsch-Jozsa;
 - Algoritmo de Grover;
-- Implementação em Qiskit;
-- Desenvolvimento prático de algoritmos usando Qiskit.
 
-Módulo 4: Machine Learning Clássico e Quântico (3 horas)
+Implementação em Qiskit > Desenvolvimento prático de algoritmos usando Qiskit:
+
+
+
+Módulo 4: Machine Learning
+
+Clássico e Quântico (3 horas)
 Objetivo: Explicar os fundamentos de aprendizado de máquina e sua relação com a computação quântica.
 
 Conteúdo:

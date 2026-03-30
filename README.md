@@ -1,3 +1,5 @@
+<img width="1103" height="556" alt="September 2022 Quantum Blog Feature Image-1" src="https://github.com/user-attachments/assets/19453cc1-91bf-409c-a9e4-44515e9c11c3" />
+
 # Quantum-Computing-Collection-Of-Resources
 ![Quantum Header](https://github.com/aryashah2k/Quantum-Computing-Collection-Of-Resources/blob/main/assets/Quantum%20Header.png)
 	

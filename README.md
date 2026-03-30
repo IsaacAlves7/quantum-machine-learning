@@ -73,7 +73,7 @@ No contexto do *Quantum Machine Learning*, os algoritmos são desenhados para ex
 
 Quanto às **ferramentas e simuladores**, hoje existem várias plataformas que permitem experimentar com computação quântica sem necessidade de hardware especializado. O **Qiskit**, da IBM, é um dos frameworks mais populares e fornece tanto simuladores locais quanto acesso a computadores quânticos reais pela nuvem IBM Quantum Experience. O **Cirq**, desenvolvido pelo Google, é outro ambiente amplamente usado para simulações e execução de algoritmos quânticos no *Quantum AI Lab*. Há também o **PennyLane**, da Xanadu, projetado especificamente para integrar redes neurais clássicas e quânticas, permitindo a criação de modelos híbridos de aprendizado profundo. Outras ferramentas incluem o **Braket** (da AWS), **QuTiP** (para simulação de sistemas quânticos), e **Ocean SDK**, da D-Wave, voltado para computação quântica adiabática.
 
-Em síntese, o Quantum Machine Learning representa a fusão entre a capacidade analítica da inteligência artificial e o poder probabilístico da física quântica. Se os computadores clássicos imitam a lógica do raciocínio humano, os computadores quânticos simulam o próprio **tecido probabilístico da natureza**. E ao incorporar conceitos como superposição, emaranhamento e interferência aos algoritmos de aprendizado, o QML inaugura um novo paradigma: o de **máquinas que aprendem não apenas com dados, mas com as próprias leis fundamentais do universo**.
+Em síntese, o Quantum Machine Learning representa a fusão entre a capacidade analítica da inteligência artificial e o poder probabilístico da física quântica. Se os computadores clássicos imitam a lógica do raciocínio humano, os computadores quânticos simulam o próprio *tecido probabilístico da natureza*. E ao incorporar conceitos como superposição, emaranhamento e interferência aos algoritmos de aprendizado, o QML inaugura um novo paradigma: o de *máquinas que aprendem não apenas com dados, mas com as próprias leis fundamentais do universo*.
 
 <div align="center"><img src="https://github.com/user-attachments/assets/57251cbd-6483-4720-8c65-91a22bfa713f"></div>
 
@@ -85,14 +85,21 @@ O **Google Cirq** é uma estrutura de código aberto para programação de compu
 
 Embora ainda esteja em seus estágios iniciais, a computação quântica promete revolucionar áreas como a segurança da informação, a simulação de sistemas complexos e o desenvolvimento de novas tecnologias. Cientistas e engenheiros estão trabalhando para superar os obstáculos técnicos e, eventualmente, criar sistemas quânticos que complementem ou até mesmo substituam a computação tradicional em certas áreas, abrindo novas fronteiras para o processamento de informações.
 
-Conteúdo:
+Instalação e Configuração do Ambiente de Desenvolvimento:
 
-- Instalação e Configuração do Ambiente de Desenvolvimento;
-- Construindo Circuitos Quânticos:Implementação de portas quânticas básicas;
-- Medições em qubits;
-- Comparação entre Qiskit e Cirq;
-- Diferenças nos paradigmas de modelagem e execução.
-- Exercício Prático: Criação de um pequeno circuito quântico simulando um algoritmo simples.
+```sh
+
+```
+
+Construindo Circuitos Quânticos: Implementação de portas quânticas básicas:
+
+Medições em qubits:
+
+Comparação entre Qiskit e Cirq:
+
+Diferenças nos paradigmas de modelagem e execução:
+
+Exercício Prático: Criação de um pequeno circuito quântico simulando um algoritmo simples.
 
 **Algoritmos Quânticos**: Quando você entra no tema de algoritmos quânticos, você está basicamente mudando o próprio “substrato” da computação, saindo de uma lógica clássica baseada em bits (0 ou 1) para um modelo baseado em qubits, que podem existir em superposição, ou seja, em múltiplos estados ao mesmo tempo. Isso não é só um detalhe técnico — é uma mudança de paradigma tão profunda quanto sair de cálculo manual para computadores eletrônicos. Um algoritmo quântico não é simplesmente uma versão mais rápida de um algoritmo clássico; ele explora propriedades físicas da mecânica quântica, como superposição, interferência e emaranhamento, para resolver certos problemas de forma drasticamente diferente.
 
@@ -175,12 +182,7 @@ Implementação:
 - Construção de um classificador quântico usando Qiskit e Pennylane;
 - Comparação com modelos clássicos.Estudo de Caso:Projeto final: Aplicação prática do QML em um problema de classificação simples nos computadores quânticos da Google (ex.: reconhecimento de padrões em imagens ou séries temporais).
 
-Módulo 6: Introdução à Correção de Erros Quânticos (2 horas)
-Objetivo: Apresentar os conceitos básicos de correção de erros em computação quântica.
-
-Conteúdo:
-
-- Desafios dos Sistemas Quânticos;
+Correção de Erros Quânticos: Desafios dos Sistemas Quânticos
 - Ruído e decoerência;
 - Códigos de Correção de Erros;
 - Código de três qubits;

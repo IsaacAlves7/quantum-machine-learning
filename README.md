@@ -122,8 +122,10 @@ Outro ponto crítico é o **paradigma híbrido** que domina a QML atual. Nele, m
 
 Finalmente, a diferença entre **paradigmas de modelagem e execução** se resume à abstração versus implementação: a modelagem quântica define *como os dados e problemas são representados no espaço quântico*, enquanto a execução determina *como esses modelos são materializados em hardware*, lidando com restrições físicas, ruído, paralelismo quântico e custo de medições. Em QML, essas escolhas afetam desempenho, escalabilidade e até mesmo a viabilidade prática de um algoritmo, tornando essencial o entendimento de ambos os paradigmas para projetar soluções eficientes.
 
+## [QML] Construindo Circuitos Quânticos
 Construindo Circuitos Quânticos: Implementação de portas quânticas básicas:
 
+## [QML] Medições em qubits
 Medições em qubits: Em computação quântica, **medições em qubits** são um conceito central e fundamentalmente diferente da observação de bits clássicos. Enquanto bits clássicos têm valores determinísticos (0 ou 1), qubits podem existir em **superposição**, ou seja, em uma combinação linear de |0⟩ e |1⟩ com amplitudes complexas. Quando medimos um qubit, essa superposição “colapsa” probabilisticamente em um estado clássico definido, e essa é a essência da medição quântica.
 
 Cada qubit é descrito por um estado |ψ⟩ = α|0⟩ + β|1⟩, onde α e β são números complexos que satisfazem |α|² + |β|² = 1. Ao medir o qubit na **base computacional** (a base padrão {|0⟩, |1⟩}), a probabilidade de observar 0 é |α|² e de observar 1 é |β|². Importante: após a medição, o qubit deixa de estar em superposição e passa a ser definitivamente o estado que foi observado. Isso significa que a medição **é destrutiva** para a informação quântica que existia antes do colapso.
@@ -249,7 +251,7 @@ Conteúdo:
 ANI → AGI → ASI
 ```
 
-## [QML] IA multimodal
+# [QML] IA multimodal
 <img height="77" align="right" src="https://github.com/user-attachments/assets/22647ca7-1cd7-498a-bc52-4c406c3b2981" />
 
 Em novembro de 2022, a OpenAI lançou o ChatGPT. Levou apenas alguns dias para que ele tomasse o mundo de assalto com seus recursos sem precedentes. A revolução da IA generativa havia começado, e todos estavam fazendo a mesma pergunta: o que vem a seguir?
@@ -296,7 +298,7 @@ Várias técnicas de fusão de dados podem ser implementadas para enfrentar os d
 
 Não existe uma única técnica de fusão de dados que seja a melhor para todos os tipos de cenários. Em vez disso, a técnica escolhida dependerá da tarefa multimodal em questão. Portanto, provavelmente será necessário um processo de tentativa e erro para encontrar o pipeline de IA multimodal mais adequado.
 
-## [QML] AGI - Artificial General Intelligence
+# [QML] AGI - Artificial General Intelligence
 <a href=""><img src="https://img.shields.io/badge/Python-NN-FFD21E?style=flat&logo=Python&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/R-NN-FFD21E?style=flat&logo=R&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Tensorflow-NN-FFD21E?style=flat&logo=Tensorflow&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Pytorch-NN-FFD21E?style=flat&logo=Pytorch&logoColor=white"></a> <a href="https://www.youtube.com/@PROFESSORKENNYOFICIAL"><img src="https://img.shields.io/badge/Keras-NN-tomato?style=flat&logo=Keras&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/GCP-NN-tomato?style=flat&logo=googlecloud&logoColor=white"></a>
 
 <img src="https://github.com/user-attachments/assets/4b88af69-4b83-4d19-b0ef-f2ae936e5d4d" height="77" align="right" />
@@ -435,7 +437,7 @@ Portanto, a AGI pode ser combinada com a Strong AI que é um modelo de inteligê
 
 ![41ba93512edf7c0469506a32849f0a1d](https://github.com/user-attachments/assets/f594033c-782b-4c7c-8245-768f47452d77)
 
-## [QML] ASI - Artificial Super Intelligence
+# [QML] ASI - Artificial Super Intelligence
 <a href=""><img src="https://img.shields.io/badge/Python-NN-FFD21E?style=flat&logo=Python&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/R-NN-FFD21E?style=flat&logo=R&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Tensorflow-NN-FFD21E?style=flat&logo=Tensorflow&logoColor=white"></a> <a href=""><img src="https://img.shields.io/badge/Pytorch-NN-FFD21E?style=flat&logo=Pytorch&logoColor=white"></a> <a href="https://www.youtube.com/@PROFESSORKENNYOFICIAL"><img src="https://img.shields.io/badge/Keras-NN-tomato?style=flat&logo=Keras&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/GCP-NN-tomato?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/GCP-NN-tomato?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/GCP-NN-tomato?style=flat&logo=googlecloud&logoColor=white"></a> <a href="https://notebooklm.google/"><img src="https://img.shields.io/badge/GCP-NN-tomato?style=flat&logo=googlecloud&logoColor=white"></a>
 
 <img src="https://github.com/user-attachments/assets/3fa16af1-b25c-4e79-8d5b-e8fadd30dd56" height="77" align="right" />

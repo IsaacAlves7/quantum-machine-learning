@@ -10,7 +10,7 @@
 
 Current and Projected Contents In This Repository:
 
-# ⚛️ QML - Quantum Machine Learning
+# ⚛️ Quantum Computing
 <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=React&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-QuTiP-512BD4?style=flat&logo=electron&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=reacttable&logoColor=white"></a> <a href="https://quantumai.google/cirq"><img src="https://img.shields.io/badge/QML-Google_Cirq-512BD4?style=flat&logo=C&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=reactos&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=OpenAI&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-Qiskit-6929C4?style=flat&logo=qiskit&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=treyarch&logoColor=white"></a> <a href="https://github.com/docling-project/docling"><img src="https://img.shields.io/badge/QML-App-512BD4?style=flat&logo=temporal&logoColor=white"></a> 
 
 <a href="https://quantum-lab-acces.netlify.app/"><img src="https://github.com/user-attachments/assets/1bbc1a8a-28f9-4827-bf2e-50fdd2f6adb2" align="right" height="77"></a>
@@ -162,6 +162,7 @@ Em resumo, medir qubits é **o ponto de conversão entre o mundo quântico e o c
 
 Exercício Prático: Criação de um pequeno circuito quântico simulando um algoritmo simples.
 
+## [QML] Algoritmos Quânticos
 **Algoritmos Quânticos**: Quando você entra no tema de algoritmos quânticos, você está basicamente mudando o próprio “substrato” da computação, saindo de uma lógica clássica baseada em bits (0 ou 1) para um modelo baseado em qubits, que podem existir em superposição, ou seja, em múltiplos estados ao mesmo tempo. Isso não é só um detalhe técnico — é uma mudança de paradigma tão profunda quanto sair de cálculo manual para computadores eletrônicos. Um algoritmo quântico não é simplesmente uma versão mais rápida de um algoritmo clássico; ele explora propriedades físicas da mecânica quântica, como superposição, interferência e emaranhamento, para resolver certos problemas de forma drasticamente diferente.
 
 A superposição permite que um sistema quântico represente várias possibilidades simultaneamente, mas o ponto mais importante não é “testar tudo ao mesmo tempo” como muita gente simplifica, e sim usar interferência para amplificar as respostas corretas e cancelar as incorretas. Isso é o coração de algoritmos quânticos: você constrói uma função matemática que manipula amplitudes de probabilidade, e o resultado emerge quando as probabilidades certas são reforçadas. Já o emaranhamento cria correlações entre qubits que não existem no mundo clássico, permitindo que o estado de um dependa instantaneamente do outro, o que é explorado para criar estruturas computacionais mais complexas e eficientes.
@@ -216,7 +217,7 @@ Implementação em Qiskit > Desenvolvimento prático de algoritmos usando Qiskit
 ```python
 ```
 
-
+## [QML] Quantum Machine Learning
 Machine Learning Clássico e Quântico - fundamentos de aprendizado de máquina e sua relação com a computação quântica.
 
 Conteúdo:

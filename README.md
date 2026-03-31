@@ -58,6 +58,8 @@ O **emaranhamento (entanglement)** é a correlação intrínseca entre dois ou m
 
 Já a **interferência** é o fenômeno que permite reforçar ou anular probabilidades de determinados estados, controlando os resultados possíveis de um cálculo quântico e permitindo que algoritmos “dirijam” a probabilidade de acerto para as respostas corretas.
 
+<img width="794" height="318" alt="571536324-5bc520a7-a5f8-4255-bda7-b8cf3471ea13" src="https://github.com/user-attachments/assets/ce5382ba-6e01-43c3-87fd-1f2e6234dec7" />
+
 No cerne da computação quântica estão os *qubits e as portas lógicas quânticas*. O *qubit* é o análogo quântico do bit clássico, mas é representado como um vetor em um espaço vetorial bidimensional complexo, o chamado **espaço de Hilbert**. Um qubit pode ser descrito matematicamente pelo estado:
 
 ```math
@@ -65,7 +67,11 @@ No cerne da computação quântica estão os *qubits e as portas lógicas quânt
 ```
 <br />
 
-Onde ( $\alpha$ ) e ( $\beta$ ) são números complexos que satisfazem ( $|\alpha|^2 + |\beta|^2 = 1$ ), correspondendo às probabilidades de o qubit estar em cada estado quando medido. Para manipular esses estados, utilizam-se **portas lógicas quânticas**, que são operações unitárias representadas por matrizes 2×2 (ou maiores, no caso de sistemas compostos). Algumas das portas mais importantes são: 
+Onde ( $\alpha$ ) e ( $\beta$ ) são números complexos que satisfazem ( $|\alpha|^2 + |\beta|^2 = 1$ ), correspondendo às probabilidades de o qubit estar em cada estado quando medido. 
+
+Para manipular esses estados, utilizam-se **portas lógicas quânticas**, que são operações unitárias representadas por matrizes 2×2 (ou maiores, no caso de sistemas compostos). 
+
+Algumas das portas mais importantes são: 
 
 - a **Porta X**, análoga ao NOT clássico, que inverte o estado do qubit;
 

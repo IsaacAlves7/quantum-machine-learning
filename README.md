@@ -130,6 +130,7 @@ No nível conceitual, dá pra dizer que o Qiskit trabalha mais com uma visão de
 
 Se você trouxer isso para o seu perfil, que já tem uma pegada forte de backend, arquitetura e sistemas distribuídos, o Qiskit pode parecer mais natural no começo, porque ele se encaixa melhor em pipelines estruturados e integração com aplicações maiores. Já o Cirq pode te dar um nível de entendimento mais profundo e controle mais próximo do “metal quântico”, o que é valioso se você quiser ir para pesquisa ou otimização de alto nível.
 
+## [QML] Modelagem quântica
 No fim, os dois não são concorrentes diretos no sentido clássico. Eles são complementares dentro de um ecossistema ainda em formação. O Qiskit puxa mais para padronização e adoção ampla, enquanto o Cirq puxa para experimentação e proximidade com hardware. E no contexto de machine learning quântico, essa diferença se traduz em algo bem claro: um prioriza acessibilidade e integração, o outro prioriza flexibilidade e controle sobre o comportamento quântico do modelo.
 
 Diferenças nos paradigmas de modelagem e execução: Quando falamos de computação quântica aplicada a Machine Learning Quântico (QML, *Quantum Machine Learning*), é essencial entender que existem paradigmas distintos tanto na modelagem quanto na execução dos algoritmos, que impactam diretamente como os dados são representados, processados e extraídos resultados. Vou detalhar os principais aspectos, destacando diferenças conceituais e práticas.

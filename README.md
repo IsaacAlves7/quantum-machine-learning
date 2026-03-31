@@ -218,7 +218,7 @@ Implementação em Qiskit > Desenvolvimento prático de algoritmos usando Qiskit
 ```python
 ```
 
-## [QML] Quantum Machine Learning
+# ⚛️ [QML] QML - Quantum Machine Learning
 Machine Learning Clássico e Quântico - fundamentos de aprendizado de máquina e sua relação com a computação quântica.
 
 Conteúdo:

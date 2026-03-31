@@ -54,15 +54,19 @@ Além disso, enquanto o processamento clássico se baseia em portas lógicas det
 	</tr>
 </table>
 
-Os princípios fundamentais da computação quântica derivam diretamente da *mecânica quântica*, a teoria física que descreve o comportamento das partículas subatômicas. Entre esses princípios, três são os pilares centrais: *superposição*, *emaranhamento* e *interferência*. A superposição permite que um qubit represente vários estados simultaneamente, como se um bit clássico pudesse ser 0 e 1 ao mesmo tempo, descrito matematicamente como uma combinação linear de ambos os estados base. 
+Os princípios fundamentais da computação quântica derivam diretamente da *mecânica quântica*, a teoria física que descreve o comportamento das partículas subatômicas. Entre esses princípios, três são os pilares centrais: *superposição*, *emaranhamento* e *interferência*. 
 
-O **emaranhamento (entanglement)** é a correlação intrínseca entre dois ou mais qubits de tal forma que o estado de um afeta instantaneamente o outro, mesmo que estejam separados por grandes distâncias — uma propriedade que Einstein chamou de “ação fantasmagórica à distância”. Isso cria uma interdependência entre os qubits, permitindo que o sistema processe informações de forma coletiva e não local. 
+1. A **superposição** permite que um qubit represente vários estados simultaneamente, como se um bit clássico pudesse ser 0 e 1 ao mesmo tempo, descrito matematicamente como uma combinação linear de ambos os estados base. 
 
-Já a **interferência** é o fenômeno que permite reforçar ou anular probabilidades de determinados estados, controlando os resultados possíveis de um cálculo quântico e permitindo que algoritmos “dirijam” a probabilidade de acerto para as respostas corretas.
+2. O **emaranhamento (entanglement)** é a correlação intrínseca entre dois ou mais qubits de tal forma que o estado de um afeta instantaneamente o outro, mesmo que estejam separados por grandes distâncias — uma propriedade que Einstein chamou de “ação fantasmagórica à distância”. Isso cria uma interdependência entre os qubits, permitindo que o sistema processe informações de forma coletiva e não local. 
+
+3. Já a **interferência** é o fenômeno que permite reforçar ou anular probabilidades de determinados estados, controlando os resultados possíveis de um cálculo quântico e permitindo que algoritmos “dirijam” a probabilidade de acerto para as respostas corretas.
+
+No cerne da computação quântica estão os *qubits e as portas lógicas quânticas*. 
 
 <img width="794" height="318" alt="571536324-5bc520a7-a5f8-4255-bda7-b8cf3471ea13" src="https://github.com/user-attachments/assets/ce5382ba-6e01-43c3-87fd-1f2e6234dec7" />
 
-No cerne da computação quântica estão os *qubits e as portas lógicas quânticas*. O *qubit* é o análogo quântico do bit clássico, mas é representado como um vetor em um espaço vetorial bidimensional complexo, o chamado **espaço de Hilbert**. Um qubit pode ser descrito matematicamente pelo estado:
+O *qubit* é o análogo quântico do bit clássico, mas é representado como um vetor em um espaço vetorial bidimensional complexo, o chamado **espaço de Hilbert**. Um qubit pode ser descrito matematicamente pelo estado:
 
 ```math
 |\psi\rangle = \alpha|0\rangle + \beta|1\rangle

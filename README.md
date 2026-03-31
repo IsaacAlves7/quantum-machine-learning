@@ -50,7 +50,7 @@ Além disso, enquanto o processamento clássico se baseia em portas lógicas det
 <table>
 	<tr>
 		<td><img src="https://github.com/user-attachments/assets/0d74c424-8cbc-4bf9-90e2-6bd07c562270" height="477"></td>
-		<td><img src="https://github.com/user-attachments/assets/5bc520a7-a5f8-4255-bda7-b8cf3471ea13" height="477"></td>
+		<td><img src="https://github.com/user-attachments/assets/35f8c6cd-dd17-4f5c-a596-c40a1ab5a6cb" height="477"></td>
 	</tr>
 </table>
 

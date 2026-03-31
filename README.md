@@ -101,6 +101,23 @@ O Quantum Machine Learning (QML) é a intersecção entre o aprendizado de máqu
 
 Em síntese, o Quantum Machine Learning representa a fusão entre a capacidade analítica da inteligência artificial e o poder probabilístico da física quântica. Se os computadores clássicos imitam a lógica do raciocínio humano, os computadores quânticos simulam o próprio *tecido probabilístico da natureza*. E ao incorporar conceitos como superposição, emaranhamento e interferência aos algoritmos de aprendizado, o QML inaugura um novo paradigma: o de *máquinas que aprendem não apenas com dados, mas com as próprias leis fundamentais do universo*.
 
+Módulo 7: Futuro da Computação Quântica e Perspectivas de Mercado (3 horas)
+Objetivo: Discutir os avanços futuros na computação quântica e suas aplicações no mercado.
+
+Conteúdo:
+
+- Tendências em Computação Quântica;
+- Hardware quântico de próxima geração;
+- Avanços em algoritmos quânticos;
+- Setores impactados pela Computação Quântica;
+- Finanças, logística, química computacional, inteligência artificial;
+- Carreiras em Computação Quântica;
+- Habilidades exigidas e oportunidades de mercado.
+
+```txt
+ANI → AGI → ASI
+```
+
 ## [QML] Google Cirq x Qiskit
 Quanto às ferramentas e simuladores, hoje existem várias plataformas que permitem experimentar com computação quântica sem necessidade de hardware especializado. O **Qiskit**, da IBM, é um dos frameworks mais populares e fornece tanto simuladores locais quanto acesso a computadores quânticos reais pela nuvem IBM Quantum Experience. O **Cirq**, desenvolvido pelo Google, é outro ambiente amplamente usado para simulações e execução de algoritmos quânticos no *Quantum AI Lab*. Há também o **PennyLane**, da Xanadu, projetado especificamente para integrar redes neurais clássicas e quânticas, permitindo a criação de modelos híbridos de aprendizado profundo. Outras ferramentas incluem o **Braket** (da AWS), **QuTiP** (para simulação de sistemas quânticos), e **Ocean SDK**, da D-Wave, voltado para computação quântica adiabática.
 
@@ -253,27 +270,10 @@ Correção de Erros Quânticos: Desafios dos Sistemas Quânticos
 
 Implementação Prática: Simulação de correção de erros usando Qiskit e Cirq.
 
-Módulo 7: Futuro da Computação Quântica e Perspectivas de Mercado (3 horas)
-Objetivo: Discutir os avanços futuros na computação quântica e suas aplicações no mercado.
-
-Conteúdo:
-
-- Tendências em Computação Quântica;
-- Hardware quântico de próxima geração;
-- Avanços em algoritmos quânticos;
-- Setores impactados pela Computação Quântica;
-- Finanças, logística, química computacional, inteligência artificial;
-- Carreiras em Computação Quântica;
-- Habilidades exigidas e oportunidades de mercado.
-
 <!-- 
 # PyTorch
 <div align="center"><img src="https://upload.wikimedia.org/wikipedia/commons/1/10/PyTorch_logo_icon.svg" height="277"></div><br \>
 -->
-
-```txt
-ANI → AGI → ASI
-```
 
 # 🧠 [QML] IA multimodal
 <img height="77" align="right" src="https://github.com/user-attachments/assets/22647ca7-1cd7-498a-bc52-4c406c3b2981" />

@@ -101,18 +101,21 @@ O Quantum Machine Learning (QML) é a intersecção entre o aprendizado de máqu
 
 Em síntese, o Quantum Machine Learning representa a fusão entre a capacidade analítica da inteligência artificial e o poder probabilístico da física quântica. Se os computadores clássicos imitam a lógica do raciocínio humano, os computadores quânticos simulam o próprio *tecido probabilístico da natureza*. E ao incorporar conceitos como superposição, emaranhamento e interferência aos algoritmos de aprendizado, o QML inaugura um novo paradigma: o de *máquinas que aprendem não apenas com dados, mas com as próprias leis fundamentais do universo*.
 
-Módulo 7: Futuro da Computação Quântica e Perspectivas de Mercado (3 horas)
-Objetivo: Discutir os avanços futuros na computação quântica e suas aplicações no mercado.
+O futuro da computação quântica está diretamente ligado à maturação simultânea de teoria, hardware e aplicações práticas, formando um ecossistema que ainda está em construção, mas já apresenta sinais claros de transformação estrutural em diversas áreas. As tendências atuais apontam para a consolidação de modelos híbridos, onde sistemas clássicos trabalham em conjunto com processadores quânticos, especialmente no contexto da chamada era NISQ (*Noisy Intermediate-Scale Quantum*). 
 
-Conteúdo:
+Empresas como IBM, Google e Microsoft estão investindo fortemente em plataformas quânticas acessíveis via nuvem, o que democratiza o acesso e acelera a experimentação. Além disso, há uma tendência crescente na padronização de frameworks e linguagens específicas, como Qiskit e Cirq, que permitem desenvolver algoritmos quânticos com maior abstração e integração com pipelines clássicos, algo muito alinhado com o que você já domina em engenharia de software.
 
-- Tendências em Computação Quântica;
-- Hardware quântico de próxima geração;
-- Avanços em algoritmos quânticos;
-- Setores impactados pela Computação Quântica;
-- Finanças, logística, química computacional, inteligência artificial;
-- Carreiras em Computação Quântica;
-- Habilidades exigidas e oportunidades de mercado.
+No que diz respeito ao hardware quântico de próxima geração, o grande desafio continua sendo a escalabilidade e a redução de ruído. Atualmente, diferentes abordagens competem entre si, como qubits supercondutores, íons aprisionados e fotônicos. Empresas como Rigetti Computing e IonQ exploram caminhos distintos, cada um com vantagens e limitações em termos de coerência, fidelidade e custo operacional. O futuro aponta para sistemas com correção de erros quânticos mais robusta, permitindo a construção de computadores quânticos tolerantes a falhas, algo essencial para aplicações realmente disruptivas. Isso significa sair de centenas para milhões de qubits lógicos confiáveis, o que ainda é um desafio técnico gigantesco, mas não impossível diante do ritmo atual de inovação.
+
+Os avanços em algoritmos quânticos também seguem uma trajetória interessante, saindo do campo puramente teórico para aplicações mais pragmáticas. Algoritmos clássicos como o de Peter Shor e Lov Grover abriram caminho ao demonstrar vantagens teóricas claras, mas hoje o foco está em algoritmos variacionais, heurísticos e híbridos que funcionem em hardware imperfeito. Isso inclui desde métodos de otimização como QAOA até aplicações em aprendizado de máquina quântico, onde circuitos parametrizados são treinados de forma semelhante a redes neurais. A tendência é que os algoritmos evoluam junto com o hardware, criando uma coevolução onde limitações físicas moldam as estratégias computacionais, algo bem diferente do mundo clássico, onde o software muitas vezes abstrai completamente o hardware.
+
+Quando analisamos os setores impactados, o potencial da computação quântica é particularmente evidente em problemas de alta complexidade combinatória e simulação. No setor financeiro, por exemplo, há aplicações em otimização de portfólios, precificação de derivativos e análise de risco, onde pequenas melhorias de eficiência podem gerar bilhões em valor. Na logística, algoritmos quânticos podem revolucionar roteamento e cadeias de suprimento, resolvendo problemas que hoje são intratáveis em larga escala. Já na química computacional e farmacêutica, a capacidade de simular moléculas com precisão quântica pode acelerar drasticamente a descoberta de novos materiais e medicamentos, algo que empresas e instituições como NASA e grandes farmacêuticas já investigam. Na inteligência artificial, o impacto ainda é exploratório, mas áreas como QML prometem novos paradigmas de representação e aprendizado que podem complementar ou até redefinir certos limites do machine learning clássico.
+
+Do ponto de vista de carreira, a computação quântica está se tornando uma interseção entre várias disciplinas: física, matemática, ciência da computação e engenharia. Não é mais um campo restrito a físicos teóricos; desenvolvedores com experiência em sistemas distribuídos, algoritmos, otimização e até observabilidade — como é o seu caso — têm uma vantagem significativa ao entrar nesse domínio. As habilidades exigidas incluem compreensão de álgebra linear, probabilidade, conceitos de mecânica quântica e familiaridade com ferramentas como Qiskit, além de linguagens como Python. Ao mesmo tempo, cresce a demanda por perfis híbridos que consigam traduzir problemas de negócio em modelos computacionais quânticos, algo muito próximo do que já acontece em arquitetura de sistemas modernos.
+
+Em termos de mercado, ainda estamos em uma fase inicial, mas com forte investimento de governos e grandes corporações. Países estão tratando a computação quântica como uma questão estratégica, especialmente por seu impacto potencial em criptografia e segurança da informação. Isso cria oportunidades tanto em pesquisa quanto em indústria, com vagas emergindo em áreas como desenvolvimento de software quântico, engenharia de hardware, e consultoria estratégica. A tendência é que, nos próximos anos, o mercado evolua de experimentação para casos de uso concretos, e quem entrar agora terá uma vantagem competitiva significativa, semelhante ao início da computação em nuvem ou da inteligência artificial moderna.
+
+Evolução de agentes de LLMs: Viáveis via Inteligência Artificial Quântica
 
 ```txt
 ANI → AGI → ASI

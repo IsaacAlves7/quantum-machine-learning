@@ -91,8 +91,6 @@ Algumas das portas mais importantes são:
 
 Em conjunto, esses fenômenos formam o alicerce dos *algoritmos quânticos*, como o de **Shor** (para fatoração de números primos), o de **Grover** (para busca em banco de dados não ordenado), e as *variações híbridas de aprendizado de máquina quântico*, onde uma rede neural clássica é combinada a camadas quânticas parametrizadas (as chamadas *Quantum Circuits Layers*).
 
-<img height="177" align="right" src="https://github.com/user-attachments/assets/848df633-3781-4441-9961-d0bee132fdb9" />
-
 No contexto do *Quantum Machine Learning*, os algoritmos são desenhados para explorar esses fenômenos de forma a otimizar tarefas de aprendizado e previsão. Um modelo típico de QML pode receber dados codificados em estados quânticos, processá-los em circuitos quânticos parametrizados e aplicar técnicas de retropropagação híbrida, onde os gradientes são calculados parcialmente por operações quânticas e parcialmente por métodos clássicos. Isso resulta em um novo paradigma de aprendizagem: redes neurais quânticas (*Quantum Neural Networks*) que operam sobre amplitudes de probabilidade em vez de valores determinísticos.
 
 O Quantum Machine Learning (QML) é a intersecção entre o aprendizado de máquina e a computação quântica, uma nova fronteira da ciência computacional que busca aproveitar as propriedades da mecânica quântica para resolver problemas de processamento de dados com uma eficiência inatingível pelos computadores clássicos. Para compreender o QML em profundidade, é necessário entender como os computadores quânticos diferem dos tradicionais, os princípios que sustentam sua operação e como essas propriedades afetam o aprendizado e o raciocínio das máquinas.
@@ -239,7 +237,24 @@ Implementação em Qiskit > Desenvolvimento prático de algoritmos usando Qiskit
 ```
 
 # ⚛️ [QML] QML - Quantum Machine Learning
-Machine Learning Clássico e Quântico - fundamentos de aprendizado de máquina e sua relação com a computação quântica.
+<img height="177" align="right" src="https://github.com/user-attachments/assets/848df633-3781-4441-9961-d0bee132fdb9" />
+
+O <a href="https://github.com/IsaacAlves7/data/blob/main/pages/ai.md#-ai-ml---machine-learning">aprendizado de máquina clássico (ML)</a> é um subcampo da inteligência artificial que permite que sistemas aprendam padrões a partir de dados, sem serem explicitamente programados para cada tarefa. Os principais paradigmas são:
+
+- Supervisionado: aprende uma função que mapeia entradas para saídas rotuladas (classificação e regressão).
+- Não supervisionado: encontra estruturas ocultas em dados não rotulados (agrupamento, redução de dimensionalidade).
+- Reforço: aprende por interação com um ambiente, maximizando uma recompensa.
+
+Machine Learning Clássico e Quântico - fundamentos de aprendizado de máquina e sua relação com a computação quântica. Machine Learning Quântico é a área que combina computação quântica com algoritmos de aprendizado de máquina. O objetivo é explorar fenômenos quânticos como superposição, emaranhamento e interferência para potencialmente obter vantagens em termos de:
+
+- Velocidade de treinamento
+- Capacidade de representação de dados complexos
+- Generalização com menos parâmetros
+
+O QML pode ser classificado em:
+
+- Quantum-enhanced ML: usa qubits para acelerar sub‑rotinas clássicas (ex: algebra linear, kernel methods).
+- Quantum machine learning nativo: modelos quânticos que processam dados diretamente em estados quânticos.
 
 Conteúdo:
 

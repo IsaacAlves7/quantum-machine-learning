@@ -280,6 +280,281 @@ Implementação:
 - Construção de um classificador quântico usando Qiskit e Pennylane;
 - Comparação com modelos clássicos.Estudo de Caso:Projeto final: Aplicação prática do QML em um problema de classificação simples nos computadores quânticos da Google (ex.: reconhecimento de padrões em imagens ou séries temporais).
 
+Correção de Erros Quânticos: Desafios dos Sistemas Quânticos: Os sistemas quânticos são inerentemente frágeis. A interação com o ambiente, imperfeições no controle e limitações dos dispositivos atuais introduzem erros que comprometem a execução de algoritmos quânticos de larga escala. A **correção de erros quânticos (QEC)** é a área que desenvolve códigos e protocolos para proteger a informação quântica, permitindo computação tolerante a falhas.
+
+1. Ruído e decoerência
+
+Diferentemente da computação clássica, onde os bits são robustos, os qubits sofrem com:
+
+- **Ruído**: flutuações indesejadas nos parâmetros de controle (por exemplo, desvios na frequência de rotação).
+- **Decoerência**: perda da coerência quântica devido à interação com o ambiente. Os estados quânticos perdem a superposição e o emaranhamento ao longo do tempo, caracterizados por tempos $T_1$ (relaxação) e $T_2$ (coerência).
+
+Os erros quânticos podem ser classificados em:
+- **Bit‑flip** ($X$): inverte o estado $|0\rangle \leftrightarrow |1\rangle$.
+- **Phase‑flip** ($Z$): altera a fase relativa: $|+\rangle \leftrightarrow |-\rangle$.
+- **Depolarização**: combinação de $X$, $Y$, $Z$ com certa probabilidade.
+- **Erros de medição**: leitura incorreta do estado do qubit.
+
+Para lidar com esses erros, precisamos de códigos que detectem e corrijam erros sem destruir a informação quântica (teorema da não‑clonagem impede a simples cópia de backup).
+
+2. Códigos de correção de erros quânticos
+
+Um código QEC mapeia um **qubit lógico** (informação protegida) em múltiplos **qubits físicos** (sujeitos a ruído). O procedimento geral é:
+
+1. **Codificação**: preparar o estado lógico em um estado de múltiplos qubits (ex: $|0_L\rangle$, $|1_L\rangle$).
+2. **Síndrome**: aplicar medições auxiliares que revelam o tipo de erro sem colapsar o estado lógico.
+3. **Recuperação**: aplicar uma operação corretiva (porta quântica) baseada na síndrome.
+
+2.1 Código de repetição de 3 qubits (bit‑flip)
+
+É o código mais simples. Protege contra erros do tipo $X$ (bit‑flip) em até um dos três qubits.
+
+**Codificação**:
+- $|0_L\rangle = |000\rangle$
+- $|1_L\rangle = |111\rangle$
+
+Qualquer combinação linear é preservada: $|\psi_L\rangle = \alpha|000\rangle + \beta|111\rangle$.
+
+**Síndrome**: medimos a paridade entre pares de qubits. Por exemplo, usamos dois qubits ancillas:
+- Medir $Z_1 Z_2$ (paridade entre qubit 1 e 2)
+- Medir $Z_2 Z_3$ (paridade entre qubit 2 e 3)
+
+Os resultados possíveis indicam se ocorreu bit‑flip e em qual qubit:
+| Síndrome $(Z_1Z_2, Z_2Z_3)$ | Erro |
+|------------------------------|------|
+| (0,0)                        | nenhum |
+| (1,0)                        | $X_1$ |
+| (1,1)                        | $X_2$ |
+| (0,1)                        | $X_3$ |
+
+Após a medição, aplicamos a correção: se a síndrome indicar $X_i$, aplicamos $X$ no qubit $i$.
+
+2.2 Código de fase (3 qubits) – análogo ao bit‑flip, mas com portas $Z$
+
+Protege contra phase‑flip ($Z$). Pode ser obtido aplicando transformação de Hadamard em cada qubit do código de bit‑flip:
+- $|0_L\rangle = |+++\rangle$, $|1_L\rangle = |---\rangle$
+
+2.3 Código de Shor (9 qubits)
+
+Combina os dois códigos anteriores para proteger contra qualquer erro de um único qubit (bit e phase). É a base para códigos mais avançados.
+
+3. Código de superfície (surface code)
+
+O código de superfície é atualmente um dos mais promissores para implementação em hardware. Ele organiza os qubits físicos em uma grade 2D, onde os qubits de dados e de medição (estabilizadores) se alternam. As vantagens incluem:
+
+- **Alta tolerância a falhas**: limiar de erro ~1% (acessível com tecnologias atuais).
+- **Escalabilidade**: basta aumentar o tamanho da grade para obter melhor proteção.
+- **Operações lógicas**: portas lógicas são implementadas através de manipulações topológicas (braiding de anyons).
+
+O código de superfície é baseado em **estabilizadores**: operadores de Pauli (produtos de $X$ e $Z$) cujos auto‑valores +1 definem o espaço lógico. As síndromes são extraídas medindo esses estabilizadores periodicamente.
+
+4. Implementação prática: simulação de códigos de correção de erros
+
+Vamos simular o **código de repetição de 3 qubits** para bit‑flip usando Qiskit e Cirq. Os exemplos incluem:
+
+- Codificação de um estado quântico arbitrário.
+- Injeção de um erro de bit‑flip em um dos qubits.
+- Extração da síndrome e correção.
+- Verificação da fidelidade final.
+
+4.1 Exemplo com Qiskit
+
+```python
+# Instalação: pip install qiskit
+from qiskit import QuantumCircuit, Aer, execute
+from qiskit.visualization import plot_histogram
+import numpy as np
+
+def encode_bit_flip(qc, data_qubit, ancillas):
+    """Codifica o estado do qubit data_qubit nos três qubits do código."""
+    # data_qubit -> ancillas[0], ancillas[1], ancillas[2]
+    qc.cx(data_qubit, ancillas[0])
+    qc.cx(data_qubit, ancillas[1])
+    # Agora os três qubits estão no estado |ψ_L⟩
+    return qc
+
+def inject_error(qc, qubit, error_type='X'):
+    """Injeta um erro (X, Y, Z) no qubit especificado."""
+    if error_type == 'X':
+        qc.x(qubit)
+    elif error_type == 'Z':
+        qc.z(qubit)
+    elif error_type == 'Y':
+        qc.y(qubit)
+    return qc
+
+def syndrome_measurement(qc, ancilla1, ancilla2, data_qubits):
+    """Mede as paridades Z1Z2 e Z2Z3 usando qubits ancilla."""
+    # Ancilla 1: mede Z1Z2
+    qc.cx(data_qubits[0], ancilla1)
+    qc.cx(data_qubits[1], ancilla1)
+    # Ancilla 2: mede Z2Z3
+    qc.cx(data_qubits[1], ancilla2)
+    qc.cx(data_qubits[2], ancilla2)
+    # Medir ancillas
+    qc.measure(ancilla1, 0)
+    qc.measure(ancilla2, 1)
+    return qc
+
+def correction_based_on_syndrome(qc, data_qubits, classical_bits):
+    """
+    Aplica correção baseada nas síndromes (bits clássicos).
+    classical_bits: lista com resultados das medições das ancillas.
+    """
+    s1, s2 = classical_bits
+    if s1 == 1 and s2 == 0:
+        qc.x(data_qubits[0])
+    elif s1 == 1 and s2 == 1:
+        qc.x(data_qubits[1])
+    elif s1 == 0 and s2 == 1:
+        qc.x(data_qubits[2])
+    # Se (0,0), não faz nada
+    return qc
+
+# --- Simulação completa ---
+# Estado inicial: |ψ⟩ = |0⟩ (pode ser alterado)
+data = QuantumCircuit(1)
+data.initialize([1/np.sqrt(2), 1/np.sqrt(2)], 0)   # estado |+⟩
+#data.initialize([1, 0], 0)   # estado |0⟩
+#data.initialize([0, 1], 0)   # estado |1⟩
+
+# Circuito completo:
+qc = QuantumCircuit(5, 2)   # 3 dados + 2 ancillas
+# Copiar estado do qubit 0 para os 3 qubits de dados
+qc.append(data, [0])   # primeiro qubit é o qubit lógico original
+qc.barrier()
+# Codificação: os qubits 0,1,2 serão os dados; os qubits 3 e 4 são ancillas
+encode_bit_flip(qc, 0, [1, 2])   # agora dados estão em 0,1,2
+qc.barrier()
+# Injetar erro: bit-flip no qubit 1 (segundo dado)
+inject_error(qc, 1, 'X')
+qc.barrier()
+# Medir síndrome
+syndrome_measurement(qc, 3, 4, [0,1,2])
+qc.barrier()
+# Recuperação baseada nas medidas (as medidas já foram feitas, então temos os bits)
+# Precisamos redefinir o circuito para aplicar correção condicional?
+# Em simulação, podemos usar if statements no backend, mas aqui faremos a correção manual:
+# após a execução, obteremos a síndrome; depois aplicamos a correção e re-executamos.
+
+# Para demonstrar, vamos executar em duas etapas: primeiro obter síndrome, depois corrigir.
+
+# Executar a parte de síndrome
+backend = Aer.get_backend('qasm_simulator')
+job = execute(qc, backend, shots=1)
+result = job.result()
+counts = result.get_counts()
+syndrome_bits = list(counts.keys())[0]  # string como '00', '01', etc.
+s1, s2 = int(syndrome_bits[0]), int(syndrome_bits[1])
+print(f"Síndrome medida: {s1}{s2}")
+
+# Agora recriar o circuito sem a medição das ancillas, e aplicar correção condicional
+qc_corr = QuantumCircuit(3, 0)   # apenas os qubits de dados
+# Reinicializar os dados no estado codificado (|+_L⟩)
+qc_corr.initialize([1/np.sqrt(2), 1/np.sqrt(2)], 0)   # estado |+⟩ no qubit 0
+encode_bit_flip(qc_corr, 0, [1, 2])
+inject_error(qc_corr, 1, 'X')   # mesmo erro
+# Aplicar correção baseada na síndrome obtida
+if s1 == 1 and s2 == 0:
+    qc_corr.x(0)
+elif s1 == 1 and s2 == 1:
+    qc_corr.x(1)
+elif s1 == 0 and s2 == 1:
+    qc_corr.x(2)
+
+# Verificar o estado final: medir os três qubits e comparar com |+_L⟩
+qc_corr.measure_all()
+job_corr = execute(qc_corr, backend, shots=1024)
+result_corr = job_corr.result()
+counts_corr = result_corr.get_counts()
+print("Resultado após correção:")
+print(counts_corr)
+# Ideal: deve ser 000 ou 111 com alta probabilidade (para |+_L⟩, os estados são |000⟩ e |111⟩)
+```
+
+**Explicação**: O código acima implementa o procedimento completo. Como o Qiskit não permite reuso direto dos resultados das medições para condicionar portas (em simulação), fizemos em duas etapas. Em um computador real, as medições são irreversíveis; a correção é aplicada baseada nos bits clássicos lidos.
+
+4.2 Exemplo com Cirq: Cirq oferece uma abordagem mais flexível, com suporte a medições condicionais (através de `ClassicallyControlledOperation`).
+
+```python
+# Instalação: pip install cirq
+import cirq
+
+def bit_flip_code_circuit(error_position=None):
+    # Qubits: 3 dados (q0,q1,q2) + 2 ancillas (a0,a1)
+    q0, q1, q2 = cirq.LineQubit.range(3)
+    a0, a1 = cirq.LineQubit.range(3, 5)
+    qubits = [q0, q1, q2, a0, a1]
+
+    # Inicializar qubit lógico no estado |+⟩
+    circuit = cirq.Circuit()
+    circuit.append(cirq.H(q0))
+
+    # Codificação: |ψ⟩ -> |ψ_L⟩
+    circuit.append([cirq.CNOT(q0, q1), cirq.CNOT(q0, q2)])
+
+    # Injetar erro (bit-flip) se especificado
+    if error_position is not None:
+        circuit.append(cirq.X(qubits[error_position]))
+
+    # Síndrome: medir Z1Z2 e Z2Z3 usando ancillas
+    # Medir Z1Z2: aplicar CNOT de q0 e q1 para a0
+    circuit.append([cirq.CNOT(q0, a0), cirq.CNOT(q1, a0)])
+    # Medir Z2Z3: aplicar CNOT de q1 e q2 para a1
+    circuit.append([cirq.CNOT(q1, a1), cirq.CNOT(q2, a1)])
+
+    # Medir ancillas e armazenar resultados em variáveis clássicas
+    a0_meas = cirq.measure(a0, key='s1')
+    a1_meas = cirq.measure(a1, key='s2')
+    circuit.append([a0_meas, a1_meas])
+
+    # Correção condicional baseada nos resultados das medidas
+    # Usamos cirq.classically_controlled_operation
+    # Para cada possível síndrome, aplicamos X no qubit apropriado
+    # Nota: no Cirq, podemos usar if_ statements com os resultados
+    s1 = cirq.NamedQubit('s1')  # placeholder
+    s2 = cirq.NamedQubit('s2')
+    # A lógica de correção deve ser inserida após as medições.
+    # Para simplicidade, faremos a correção em um segundo circuito (como no Qiskit) ou usaremos uma sub-rotina.
+    # Abaixo, uma maneira: após as medições, criamos um circuito condicional
+    correction_circuit = cirq.Circuit()
+    # Precisamos acessar os resultados; como em simulação, podemos executar o circuito e depois aplicar correção.
+    # Em Cirq, podemos usar simulações com "Simulator" e depois manipular o estado.
+
+    return circuit
+
+# Execução com simulador
+sim = cirq.Simulator()
+circuit = bit_flip_code_circuit(error_position=1)  # erro no q1
+result = sim.run(circuit, repetitions=100)
+s1_vals = result.measurements['s1']
+s2_vals = result.measurements['s2']
+
+# Agora, para cada repetição, podemos determinar a correção e aplicá-la
+# Como exemplo, vamos re-executar o circuito sem as medições, aplicando a correção baseada na síndrome.
+# Aqui simplificamos: apenas imprimimos as síndromes.
+print("Síndromes medidas (s1,s2):")
+for i in range(10):
+    print(f"{s1_vals[i][0]}{s2_vals[i][0]}")
+```
+
+> [!Note]
+> **Nota**: O código Cirq acima ilustra a medição da síndrome. Para uma correção completa, normalmente se executaria o circuito uma vez, obtendo as síndromes, e depois aplicaria a correção em um novo circuito ou em hardware usando realimentação clássica.
+
+5. Considerações finais
+
+- Os códigos de correção de erros são fundamentais para a computação quântica em larga escala.
+- O código de repetição de 3 qubits é didático, mas insuficiente para proteger contra todos os tipos de erro.
+- O código de superfície é o principal candidato para implementação em futuros processadores quânticos tolerantes a falhas.
+- Ferramentas como Qiskit e Cirq permitem simular e experimentar os conceitos, preparando o caminho para implementações reais.
+
+Para se aprofundar:
+- **Qiskit Textbook**: capítulo sobre correção de erros.
+- **Cirq Tutorials**: seção sobre correção de erros quânticos.
+- Artigos sobre código de superfície (Fowler et al., "Surface codes: Towards practical large-scale quantum computation").
+
+A correção de erros quânticos é um campo em evolução, mas já fornece as bases teóricas para a construção de computadores quânticos escaláveis e confiáveis.
+
 Correção de Erros Quânticos: Desafios dos Sistemas Quânticos
 - Ruído e decoerência;
 - Códigos de Correção de Erros;

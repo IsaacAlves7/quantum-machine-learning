@@ -266,11 +266,9 @@ Conteúdo:
 ## [QML] Quantum Neural Networks (QNNs)
 Arquitetura de Quantum Neural Networks (QNNs): As **Redes Neurais Quânticas** (Quantum Neural Networks – QNNs) são modelos de aprendizado de máquina que utilizam circuitos quânticos parametrizados (Parameterized Quantum Circuits – PQCs) como seus blocos fundamentais. Elas se inserem no paradigma de **aprendizado híbrido quântico‑clássico**, onde a parte quântica processa informações em espaços de Hilbert de alta dimensionalidade e a parte clássica otimiza os parâmetros e realiza o pós‑processamento.
 
-Neste texto, exploraremos a arquitetura típica de uma QNN, seus componentes, variações, técnicas de treinamento e implementações práticas usando as bibliotecas **PennyLane** e **Qiskit Machine Learning**.
+Neste texto, exploraremos a arquitetura típica de uma QNN, seus componentes, variações, técnicas de treinamento e implementações práticas usando as bibliotecas <a href="https://pennylane.ai/">PennyLane</a> e **Qiskit Machine Learning**.
 
-1. Componentes fundamentais de uma QNN
-
-Uma QNN é composta por três camadas principais:
+1. Componentes fundamentais de uma QNN: Uma QNN é composta por três camadas principais:
 
 1. **Codificação (Encoding)**  
    Transforma dados clássicos $\mathbf{x} \in \mathbb{R}^d$ em um estado quântico $|\psi(\mathbf{x})\rangle$ através de portas parametrizadas pelos dados. Exemplos comuns:

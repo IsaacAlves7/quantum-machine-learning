@@ -270,20 +270,17 @@ Neste texto, exploraremos a arquitetura típica de uma QNN, seus componentes, va
 
 1. Componentes fundamentais de uma QNN: Uma QNN é composta por três camadas principais:
 
-1. **Codificação (Encoding)**  
-   Transforma dados clássicos $\mathbf{x} \in \mathbb{R}^d$ em um estado quântico $|\psi(\mathbf{x})\rangle$ através de portas parametrizadas pelos dados. Exemplos comuns:
+1. **Codificação (Encoding)**: Transforma dados clássicos $\mathbf{x} \in \mathbb{R}^d$ em um estado quântico $|\psi(\mathbf{x})\rangle$ através de portas parametrizadas pelos dados. Exemplos comuns:
    - *Angle encoding*: cada feature vira um ângulo de rotação ($R_y$, $R_z$).
    - *Amplitude encoding*: os dados normalizados definem as amplitudes do estado.
    - *Basis encoding*: cada bit clássico é representado diretamente por um qubit.
 
-2. **Camadas variacionais (Ansatz)**  
-   Sequência de portas quânticas com parâmetros treináveis $\boldsymbol{\theta}$. Essas portas introduzem correlações (emaranhamento) e transformações não‑lineares. Um ansatz típico combina:
-   - Rotações individuais (ex: $R_y(\theta_i)$)
+2. **Camadas variacionais (Ansatz)**: Sequência de portas quânticas com parâmetros treináveis $\boldsymbol{\theta}$. Essas portas introduzem correlações (emaranhamento) e transformações não‑lineares. Um ansatz típico combina:
+   - Rotações individuais (ex: $$R_y(\theta_i)$)
    - Portas de emaranhamento (ex: $CNOT$, $CZ$, $CR_x$)
    - Repetição de blocos (camadas)
 
-3. **Medição e pós‑processamento**  
-   Um ou mais qubits são medidos, produzindo valores esperados de observáveis (ex: $\langle Z \rangle$). Esses valores são combinados por uma camada clássica (ex: *softmax*, *sigmoid*) para gerar a saída final.
+3. **Medição e pós‑processamento**: Um ou mais qubits são medidos, produzindo valores esperados de observáveis (ex: $\langle Z \rangle$). Esses valores são combinados por uma camada clássica (ex: *softmax*, *sigmoid*) para gerar a saída final.
 
 ![Arquitetura esquemática de uma QNN híbrida](https://raw.githubusercontent.com/XanaduAI/quantum-machine-learning-guide/main/figures/hybrid_model.png)
 

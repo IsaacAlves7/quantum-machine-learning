@@ -262,6 +262,296 @@ Conteúdo:
 - Revisão rápida de classificação, regressão e redes neurais;
 - Introdução ao Machine Learning Quântico (QML);
 - Diferenças e vantagens potenciais do QML;
+
+## [QML] Quantum Neural Networks (QNNs)
+Arquitetura de Quantum Neural Networks (QNNs): As **Redes Neurais Quânticas** (Quantum Neural Networks – QNNs) são modelos de aprendizado de máquina que utilizam circuitos quânticos parametrizados (Parameterized Quantum Circuits – PQCs) como seus blocos fundamentais. Elas se inserem no paradigma de **aprendizado híbrido quântico‑clássico**, onde a parte quântica processa informações em espaços de Hilbert de alta dimensionalidade e a parte clássica otimiza os parâmetros e realiza o pós‑processamento.
+
+Neste texto, exploraremos a arquitetura típica de uma QNN, seus componentes, variações, técnicas de treinamento e implementações práticas usando as bibliotecas **PennyLane** e **Qiskit Machine Learning**.
+
+1. Componentes fundamentais de uma QNN
+
+Uma QNN é composta por três camadas principais:
+
+1. **Codificação (Encoding)**  
+   Transforma dados clássicos $\mathbf{x} \in \mathbb{R}^d$ em um estado quântico $|\psi(\mathbf{x})\rangle$ através de portas parametrizadas pelos dados. Exemplos comuns:
+   - *Angle encoding*: cada feature vira um ângulo de rotação ($R_y$, $R_z$).
+   - *Amplitude encoding*: os dados normalizados definem as amplitudes do estado.
+   - *Basis encoding*: cada bit clássico é representado diretamente por um qubit.
+
+2. **Camadas variacionais (Ansatz)**  
+   Sequência de portas quânticas com parâmetros treináveis $\boldsymbol{\theta}$. Essas portas introduzem correlações (emaranhamento) e transformações não‑lineares. Um ansatz típico combina:
+   - Rotações individuais (ex: $R_y(\theta_i)$)
+   - Portas de emaranhamento (ex: $CNOT$, $CZ$, $CR_x$)
+   - Repetição de blocos (camadas)
+
+3. **Medição e pós‑processamento**  
+   Um ou mais qubits são medidos, produzindo valores esperados de observáveis (ex: $\langle Z \rangle$). Esses valores são combinados por uma camada clássica (ex: *softmax*, *sigmoid*) para gerar a saída final.
+
+![Arquitetura esquemática de uma QNN híbrida](https://raw.githubusercontent.com/XanaduAI/quantum-machine-learning-guide/main/figures/hybrid_model.png)
+
+---
+
+2. Arquiteturas comuns de QNN
+
+2.1 Classificador Variacional (VQC)
+
+O **Variational Quantum Classifier** (VQC) é a QNN mais simples: dados são codificados, passam por um ansatz, e os valores esperados alimentam um classificador linear.
+
+```python
+# Exemplo conceitual com PennyLane
+import pennylane as qml
+from pennylane import numpy as np
+
+dev = qml.device('default.qubit', wires=2)
+
+@qml.qnode(dev)
+def qnn(params, x):
+    qml.AngleEmbedding(x, wires=range(2))          # encoding
+    qml.BasicEntanglerLayers(params, wires=range(2)) # ansatz
+    return qml.expval(qml.PauliZ(0)), qml.expval(qml.PauliZ(1))
+
+def hybrid_model(params, x):
+    out = qnn(params, x)
+    return np.tanh(out[0] + out[1])   # pós‑processamento
+```
+
+2.2 Data Re‑uploading
+
+Proposto por Pérez‑Salinas et al. (2020), este modelo insere os dados repetidamente entre camadas variacionais, aumentando a capacidade expressiva.
+
+```
+Camada 1: Encoding → Variacional
+Camada 2: Encoding → Variacional
+...
+Camada L: Encoding → Variacional → Medição
+```
+
+Cada re‑uploading permite que os dados influenciem o circuito em múltiplos pontos, o que equivale a aumentar a não‑linearidade.
+
+2.3 Quantum Convolutional Neural Networks (QCNN)
+
+Inspiradas em CNNs clássicas, as QCNNs aplicam convoluções e pooling quânticos para reduzir gradualmente o número de qubits. São especialmente úteis para dados estruturados (ex: imagens) e possuem vantagens teóricas na detecção de simetrias.
+
+```python
+def qcnn_layer(params, wires):
+    # Exemplo de convolução + pooling
+    qml.CNOT(wires=[wires[0], wires[1]])
+    qml.RY(params[0], wires=wires[0])
+    qml.RY(params[1], wires=wires[1])
+    # Pooling: mede um qubit e condiciona o outro
+    m = qml.measure(wires[0])
+    qml.cond(m, qml.PauliX)(wires[1])
+    return [wires[1]]  # reduz número de qubits
+```
+
+2.4 Quantum Generative Adversarial Networks (QGAN): Redes adversárias onde tanto o gerador quanto o discriminador são circuitos quânticos (ou híbridos). Gerador aprende a produzir distribuições de dados; discriminador tenta distinguir dados reais dos gerados.
+
+3. Treinamento de QNNs: O treinamento de uma QNN consiste em minimizar uma função custo $C(\boldsymbol{\theta})$ usando otimizadores clássicos. Como a saída de um circuito quântico é geralmente contínua (valor esperado), podemos usar gradientes calculados via:
+
+- **Parameter Shift Rule**: regra exata para portas da forma $e^{-i\theta P/2}$:  
+  $\frac{\partial f}{\partial \theta} = \frac{1}{2} [f(\theta + \pi/2) - f(\theta - \pi/2)]$
+
+- **Gradientes automáticos** via frameworks (PennyLane, TensorFlow Quantum, Qiskit) que internamente aplicam a regra ou realizam diferenciação numérica.
+
+A otimização é realizada com otimizadores clássicos: Adam, SGD, COBYLA, etc. Em ambientes híbridos, a retropropagação (backpropagation) ocorre normalmente, com as portas quânticas tratadas como camadas diferenciáveis.
+
+4. Implementações práticas em Python
+
+4.1 QNN com PennyLane + PyTorch (classificação binária)
+
+```python
+import pennylane as qml
+import torch
+import torch.nn as nn
+from sklearn.datasets import make_classification
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+
+# Configuração do dispositivo quântico
+n_qubits = 4
+dev = qml.device('default.qubit', wires=n_qubits)
+
+@qml.qnode(dev, interface='torch')
+def quantum_layer(weights, inputs):
+    # Angle encoding
+    qml.AngleEmbedding(inputs, wires=range(n_qubits))
+    # Camadas variacionais
+    for i in range(len(weights)):
+        qml.RY(weights[i], wires=i % n_qubits)
+        qml.CNOT(wires=[i % n_qubits, (i+1) % n_qubits])
+    # Medição de um observável por qubit
+    return [qml.expval(qml.PauliZ(i)) for i in range(n_qubits)]
+
+class HybridQNN(nn.Module):
+    def __init__(self, n_qubits, n_layers):
+        super().__init__()
+        self.n_qubits = n_qubits
+        # Parâmetros variacionais: n_layers * n_qubits (simplificado)
+        self.weights = nn.Parameter(torch.randn(n_layers * n_qubits))
+        # Camada clássica final
+        self.fc = nn.Linear(n_qubits, 1)
+
+    def forward(self, x):
+        batch_size = x.shape[0]
+        q_out = []
+        for sample in x:
+            q_out.append(quantum_layer(self.weights, sample))
+        q_out = torch.stack(q_out)
+        return torch.sigmoid(self.fc(q_out))
+
+# Dados sintéticos
+X, y = make_classification(n_samples=500, n_features=n_qubits, n_classes=2)
+X = StandardScaler().fit_transform(X)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Converter para tensores PyTorch
+X_train = torch.tensor(X_train, dtype=torch.float32)
+y_train = torch.tensor(y_train, dtype=torch.float32).view(-1, 1)
+X_test = torch.tensor(X_test, dtype=torch.float32)
+y_test = torch.tensor(y_test, dtype=torch.float32).view(-1, 1)
+
+model = HybridQNN(n_qubits=4, n_layers=3)
+criterion = nn.BCELoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.1)
+
+for epoch in range(50):
+    optimizer.zero_grad()
+    pred = model(X_train)
+    loss = criterion(pred, y_train)
+    loss.backward()
+    optimizer.step()
+    if epoch % 10 == 0:
+        print(f"Epoch {epoch}, loss: {loss.item():.4f}")
+
+# Avaliação
+with torch.no_grad():
+    acc = ((model(X_test) > 0.5) == y_test).float().mean()
+    print(f"Acurácia: {acc.item():.4f}")
+```
+
+4.2 QNN com Qiskit Machine Learning (VQC)
+
+```python
+from qiskit import QuantumCircuit
+from qiskit.circuit import ParameterVector
+from qiskit.primitives import Sampler
+from qiskit_machine_learning.algorithms import VQC
+from qiskit_machine_learning.neural_networks import SamplerQNN
+from qiskit_machine_learning.connectors import TorchConnector
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+import torch
+
+# Carregar dados (iris com 2 classes)
+data, labels = load_iris(return_X_y=True)
+data = data[labels <= 1]
+labels = labels[labels <= 1]
+X_train, X_test, y_train, y_test = train_test_split(data, labels, test_size=0.2)
+
+# Criar feature map (codificação)
+feature_map = QuantumCircuit(2)
+feature_map.ry(ParameterVector('x', 2), [0, 1])  # angle encoding
+
+# Criar ansatz (camadas variacionais)
+ansatz = QuantumCircuit(2)
+params = ParameterVector('θ', 4)
+ansatz.ry(params[0], 0)
+ansatz.ry(params[1], 1)
+ansatz.cx(0, 1)
+ansatz.ry(params[2], 0)
+ansatz.ry(params[3], 1)
+
+# Criar SamplerQNN (rede neural quântica)
+qnn = SamplerQNN(
+    circuit=ansatz,
+    input_params=feature_map.parameters,
+    weight_params=ansatz.parameters,
+    sampler=Sampler()
+)
+
+# Conectar ao PyTorch
+model = TorchConnector(qnn, initial_weights=torch.randn(4))
+
+# Treinar com PyTorch
+criterion = torch.nn.BCEWithLogitsLoss()
+optimizer = torch.optim.Adam(model.parameters(), lr=0.1)
+
+X_train_t = torch.tensor(X_train, dtype=torch.float32)
+y_train_t = torch.tensor(y_train, dtype=torch.float32).view(-1, 1)
+
+for epoch in range(50):
+    optimizer.zero_grad()
+    pred = model(X_train_t).squeeze()
+    loss = criterion(pred, y_train_t)
+    loss.backward()
+    optimizer.step()
+    if epoch % 10 == 0:
+        print(f"Epoch {epoch}, loss: {loss.item():.4f}")
+
+# Avaliação
+with torch.no_grad():
+    pred_test = model(torch.tensor(X_test, dtype=torch.float32))
+    acc = ((pred_test > 0.5) == torch.tensor(y_test, dtype=torch.float32).view(-1,1)).float().mean()
+    print(f"Acurácia: {acc.item():.4f}")
+```
+
+4.3 Data Re‑uploading com PennyLane
+
+```python
+dev = qml.device('default.qubit', wires=2)
+
+@qml.qnode(dev)
+def reuploading_model(params, x):
+    n_layers = len(params) // 2   # 2 parâmetros por camada (um por qubit)
+    for l in range(n_layers):
+        # Encoding
+        qml.RY(x[0], wires=0)
+        qml.RY(x[1], wires=1)
+        # Variacional
+        qml.RY(params[2*l], wires=0)
+        qml.RY(params[2*l+1], wires=1)
+        qml.CNOT(wires=[0,1])
+    return qml.expval(qml.PauliZ(0))
+
+# Os parâmetros são treinados para classificar (ex: usando PyTorch)
+```
+
+5. Desafios e considerações
+
+- **Barren plateaus**: em grandes circuitos aleatórios, os gradientes tendem a zero exponencialmente, dificultando o treinamento. Estratégias incluem inicialização cuidadosa, escolha de ansatz estruturados e uso de técnicas como *layerwise learning*.
+- **Hardware NISQ**: ruído, número limitado de qubits e baixa fidelidade restringem a complexidade dos circuitos.
+- **Expressividade**: nem todo problema se beneficia da computação quântica; há necessidade de entender quando uma QNN pode superar modelos clássicos.
+- **Overfitting**: assim como redes clássicas, QNNs podem sofrer com sobreajuste, exigindo regularização e validação cuidadosa.
+
+6. Tendências futuras
+
+- **Circuitos mais profundos e tolerantes a falhas**: com o avanço da correção de erros, QNNs maiores poderão ser implementadas.
+- **Integração com frameworks clássicos**: o ecossistema PennyLane, Qiskit, TensorFlow Quantum e outros continuam a evoluir, permitindo prototipagem híbrida transparente.
+- **Aplicações práticas**: química computacional, otimização, finanças e problemas de simetria (ex: partículas físicas) são áreas onde QNNs já mostram vantagens.
+
+7. Conclusão
+
+As Quantum Neural Networks representam um dos caminhos mais promissores para a combinação de computação quântica e aprendizado de máquina. Sua arquitetura modular – codificação, ansatz variacional e pós‑processamento – permite flexibilidade e integração com bibliotecas clássicas. Apesar dos desafios atuais (barren plateaus, hardware ruidoso), as QNNs já podem ser estudadas e aplicadas em simulações e pequenos dispositivos reais, servindo como laboratório para explorar o potencial quântico na IA.
+
+Para aprofundar, recomendo:
+- *Pennylane Documentation: Quantum Machine Learning*
+- *Qiskit Machine Learning Tutorials*
+- Artigo seminal: *“Classification with Quantum Neural Networks on Near Term Processors”* (Farhi & Neven, 2018)
+- *“Data re-uploading for a universal quantum classifier”* (Pérez-Salinas et al., 2020)
+
+```python
+# Exemplo final: uma QNN simples em 5 linhas de PennyLane
+import pennylane as qml
+dev = qml.device('default.qubit', wires=2)
+@qml.qnode(dev)
+def qnn(params, x):
+    qml.templates.AngleEmbedding(x, wires=range(2))
+    qml.templates.BasicEntanglerLayers(params, wires=range(2))
+    return qml.expval(qml.PauliZ(0))
+```
+
+Agora você tem uma base sólida para projetar, treinar e explorar suas próprias Quantum Neural Networks.
+
 - Arquitetura de Quantum Neural Networks (QNNs);
 - Bibliotecas para QML;
 - Qiskit Machine Learning e Pennylane.
@@ -280,6 +570,7 @@ Implementação:
 - Construção de um classificador quântico usando Qiskit e Pennylane;
 - Comparação com modelos clássicos.Estudo de Caso:Projeto final: Aplicação prática do QML em um problema de classificação simples nos computadores quânticos da Google (ex.: reconhecimento de padrões em imagens ou séries temporais).
 
+## [QML] Correção de Erros Quânticos
 Correção de Erros Quânticos: Desafios dos Sistemas Quânticos: Os sistemas quânticos são inerentemente frágeis. A interação com o ambiente, imperfeições no controle e limitações dos dispositivos atuais introduzem erros que comprometem a execução de algoritmos quânticos de larga escala. A **correção de erros quânticos (QEC)** é a área que desenvolve códigos e protocolos para proteger a informação quântica, permitindo computação tolerante a falhas.
 
 1. Ruído e decoerência

@@ -75,6 +75,8 @@ O *qubit* é o análogo quântico do bit clássico, mas é representado como um 
 
 Onde ( $\alpha$ ) e ( $\beta$ ) são números complexos que satisfazem ( $|\alpha|^2 + |\beta|^2 = 1$ ), correspondendo às probabilidades de o qubit estar em cada estado quando medido. 
 
+<img width="2917" height="3359" alt="qubit-primer_graphic_d_TEXT" src="https://github.com/user-attachments/assets/d8dd9a14-393d-40c5-9d22-83c1cd3f9fa6" />
+
 Para manipular esses estados, utilizam-se **portas lógicas quânticas**, que são operações unitárias representadas por matrizes 2×2 (ou maiores, no caso de sistemas compostos). 
 
 Algumas das portas mais importantes são: 

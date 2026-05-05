@@ -1,0 +1,35 @@
+data:
+  dataset: moons           # opsi: moons, circles, breast_cancer
+  n_samples: 300           
+  noise: 0.25
+  test_size: 0.2
+  val_size: 0.15
+  random_state: 123
+  feature_scaler: standard # opsi: standard, minmax, robust
+  feature_expansion: polynomial  # opsi: polynomial, none
+  expansion_degree: 3
+  n_qubits: 4             # keep 4, make simulation in M1
+model:
+  shots: null              # CHANGE 1024 → null (analytic mode, faster)
+  feature_layers: 2
+  variational_layers: 3
+  hidden_dim: 48
+  dropout: 0.15
+  kernel_regularization: 1.0
+  use_complex_device: false  
+training:
+  epochs: 40               # FROM 60 → 40 (time saving, quite stable)
+  batch_size: 16          # FROM 32 → 16 (lighter on RAM)
+  learning_rate: 0.004
+  weight_decay: 0.0008
+  gradient_clip: 1.0
+  patience: 8
+  min_delta: 0.001
+  device: mps              # use Metal Performance Shaders (GPU M1)
+  log_interval: 10
+
+evaluation:
+  save_path: "artifacts"
+  roc_curve_points: 200
+  confusion_matrix: true
+  report_average: "weighted"
